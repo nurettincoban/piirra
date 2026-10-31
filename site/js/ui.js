@@ -5,7 +5,7 @@ import { t, lang } from './i18n.js';
 import { settings } from './store.js';
 
 export const app = document.getElementById('app');
-export const REPO_URL = 'https://github.com/piirra-app/piirra';
+export const REPO_URL = 'https://github.com/nurettincoban/piirra';
 
 export function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));

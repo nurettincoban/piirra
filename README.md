@@ -66,7 +66,7 @@ Then open http://localhost:8000.
 3. The workflow in `.github/workflows/pages.yml` publishes `site/` on every push to `main`.
 
 All paths are relative, so the site works from `https://<user>.github.io/<repo>/`.
-Set your repository address in `site/js/ui.js` (`REPO_URL`) so the "Source code" links point to it.
+Live site: **https://nurettincoban.github.io/piirra/**
 
 ## Project structure
 
