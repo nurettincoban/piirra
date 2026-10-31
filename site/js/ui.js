@@ -25,7 +25,7 @@ export function leave() { if (teardown) { try { teardown(); } catch {} teardown 
 
 const NAV = [
   { href: '#/', key: 'nav_home', icon: 'pencil-line', match: (r) => r === '' },
-  { href: '#/learn', key: 'nav_learn', icon: 'book-open', match: (r) => ['learn', 'grammar', 'phrases', 'talk', 'numbers', 'verbs', 'sentences', 'scenes'].includes(r) },
+  { href: '#/learn', key: 'nav_learn', icon: 'book-open', match: (r) => ['learn', 'grammar', 'phrases', 'talk', 'numbers', 'verbs', 'sentences', 'scenes', 'read'].includes(r) },
   { href: '#/words', key: 'nav_words', icon: 'library', match: (r) => r === 'words' },
   { href: '#/progress', key: 'nav_progress', icon: 'chart-no-axes-column', match: (r) => r === 'progress' },
 ];
@@ -51,6 +51,7 @@ export function shell(content, { route = '', game = false } = {}) {
     <footer class="foot"><div class="wrap">
       <span>${t('foot_left')} · <a href="#/about">${t('about')}</a> · <a href="${REPO_URL}" target="_blank" rel="noopener">${t('source')}</a></span>
       <span>${t('foot_right')}</span>
+      <span class="foot-ai">${icon('sparkles')} ${t('ai_note')} <a href="${REPO_URL}/issues/new" target="_blank" rel="noopener">${t('report')}</a></span>
     </div></footer>
     <nav class="tabbar" aria-label="Main">${navLinks}</nav>
   </div>`;
@@ -98,17 +99,48 @@ export function distance(a, b) {
 }
 // ä/ö typed as a/o is a very common keyboard problem — treat it as a near miss, not wrong.
 const plain = (s) => s.replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/å/g, 'a');
-export function check(value, answers) {
+// Kinds: exact · umlaut (ä/ö typed as a/o) · near (a small slip, accepted) · close (not accepted, but almost) · wrong.
+// One wrong, missing, extra or swapped letter is never "wrong" for words of three letters or more.
+export function checkDetail(value, answers) {
   const v = normalize(value);
-  if (!v) return 'empty';
-  const list = answers.map(normalize);
-  if (list.includes(v)) return 'exact';
-  for (const a of list) {
-    if (plain(a) === plain(v)) return 'umlaut';
-    if (a.length >= 4 && distance(a, v) === 1) return 'near';
-    if (a.length >= 9 && distance(a, v) === 2) return 'near';
+  if (!v) return { kind: 'empty' };
+  let best = null;
+  for (const raw of answers.filter(Boolean)) {
+    const a = normalize(raw);
+    if (a === v) return { kind: 'exact', target: raw };
+    const d = plain(a) === plain(v) ? 0.5 : distance(a, v);
+    if (!best || d < best.d) best = { raw, a, d };
   }
-  return 'wrong';
+  if (!best) return { kind: 'wrong' };
+  const n = Array.from(best.a).length;
+  const { d } = best;
+  let kind = 'wrong';
+  if (d === 0.5) kind = 'umlaut';
+  else if ((d === 1 && n >= 3) || (d === 2 && n >= 9) || (d === 3 && n >= 20)) kind = 'near';
+  else if ((d === 1) || (d === 2 && n >= 4) || (d === 3 && n >= 10) || (d <= 6 && n >= 20)) kind = 'close';
+  return { kind, target: best.raw, distance: d };
+}
+export function check(value, answers) { return checkDetail(value, answers).kind; }
+
+// Shows the right spelling with the letters you missed highlighted, and letters you added struck out.
+export function diffHtml(typed, target) {
+  const a = Array.from(String(typed).trim().toLocaleLowerCase('fi'));
+  const b = Array.from(String(target));
+  const bl = b.map((c) => c.toLocaleLowerCase('fi'));
+  const d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
+  for (let j = 0; j <= b.length; j++) d[0][j] = j;
+  for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++) {
+    d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === bl[j - 1] ? 0 : 1));
+  }
+  const out = [];
+  let i = a.length, j = b.length;
+  while (i > 0 || j > 0) {
+    if (i > 0 && j > 0 && d[i][j] === d[i - 1][j - 1] + (a[i - 1] === bl[j - 1] ? 0 : 1)) {
+      out.unshift(a[i - 1] === bl[j - 1] ? esc(b[j - 1]) : `<mark>${esc(b[j - 1])}</mark>`); i--; j--;
+    } else if (j > 0 && d[i][j] === d[i][j - 1] + 1) { out.unshift(`<mark>${esc(b[j - 1])}</mark>`); j--; }
+    else { out.unshift(`<del>${esc(a[i - 1])}</del>`); i--; }
+  }
+  return `<span class="diff" lang="fi">${out.join('')}</span>`;
 }
 
 export function shuffle(list) {
@@ -144,7 +176,10 @@ export function bindSlots(input, answer, box, { revealed = () => 0, approx = fal
   if (!input || !box || !answer) return () => {};
   const chars = Array.from(answer);
   const total = chars.filter(isLetter).length;
-  const update = () => {
+  const letters = chars.filter(isLetter).map((c) => c.toLocaleLowerCase('fi'));
+  // update({ mark: true }) after a wrong guess colours each typed letter: green = right letter in the right place.
+  const update = (opts) => {
+    const mark = !!opts?.mark;
     const typed = Array.from(input.value).filter(isLetter);
     const shown = revealed();
     let k = 0;
@@ -152,8 +187,9 @@ export function bindSlots(input, answer, box, { revealed = () => 0, approx = fal
       if (!isLetter(c)) return c === ' ' ? '<i class="slot-space"></i>' : `<i class="slot-mark">${esc(c)}</i>`;
       const tc = typed[k];
       const hint = k < shown ? c : '';
+      const state = mark && tc ? (tc.toLocaleLowerCase('fi') === letters[k] ? 'ok' : 'no') : '';
       k++;
-      return `<span class="slot ${tc ? 'on' : hint ? 'hint' : ''}">${esc(tc || hint)}</span>`;
+      return `<span class="slot ${tc ? 'on' : hint ? 'hint' : ''} ${state}">${esc(tc || hint)}</span>`;
     });
     // Group each word so long answers wrap between words, not inside them.
     const words = cells.join('').split('<i class="slot-space"></i>').map((w) => `<span class="slot-word">${w}</span>`).join('');
@@ -161,9 +197,24 @@ export function bindSlots(input, answer, box, { revealed = () => 0, approx = fal
     box.innerHTML = `${words}<span class="slot-count">${approx ? '≈ ' : ''}${typed.length}/${total} ${t('letters')}</span>`;
     box.setAttribute('aria-label', `${total} ${t('letters')}`);
   };
-  input.addEventListener('input', update);
+  input.addEventListener('input', () => update());
   update();
   return update;
+}
+
+// Shared feedback after a guess that was not accepted. Returns true when it was "close".
+export function missFeedback(el, res, value, update) {
+  const close = res.kind === 'close';
+  update?.({ mark: true });
+  if (!el) return close;
+  el.className = 'feedback ' + (close ? 'close' : '');
+  const typed = Array.from(value).filter(isLetter);
+  const target = Array.from(res.target || '').filter(isLetter).map((c) => c.toLocaleLowerCase('fi'));
+  const right = typed.filter((c, i) => c.toLocaleLowerCase('fi') === target[i]).length;
+  el.innerHTML = close
+    ? `${icon('sparkle')} ${t('close_miss')}`
+    : `${t('not_quite')}${right ? ` <span class="muted">· ${t('letters_right', { n: right })}</span>` : ''}`;
+  return close;
 }
 
 // "**x**" → <b>x</b> (endings), "*x*" → <i>x</i> (Finnish examples), everything else escaped.

@@ -61,6 +61,23 @@ Exactly one `{answer}` per sentence. `base` is the dictionary form shown as an o
 
 `answers` are compared after lowercasing and removing punctuation. List the natural variants.
 
+## `readings.js` — short reading texts
+
+```js
+{ id: 'r1-morning', lv: 1, icon: 'sunrise',
+  title: { fi: 'Aamu', en: 'Morning', tr: 'Sabah' },
+  text: ['Herään kello seitsemän.', 'Juon kahvia keittiössä.'],                 // Finnish paragraphs
+  trans: { en: ['I wake up at seven.', '…'], tr: ['Saat yedide uyanırım.', '…'] }, // same number of paragraphs
+  gloss: [['herätä', 'to wake up', 'uyanmak'], ['keittiö', 'kitchen', 'mutfak']],   // 6–12 key words, dictionary form
+  questions: [
+    { q: { en: 'When does the narrator wake up?', tr: 'Anlatıcı ne zaman uyanıyor?' },
+      options: [{ en: 'At seven', tr: 'Yedide' }, { en: 'At eight', tr: 'Sekizde' }, { en: 'At noon', tr: 'Öğlen' }],
+      answer: 0 },
+  ] }
+```
+
+Questions are asked in the learner's language about the Finnish text; 3–4 options, `answer` is the index of the correct option.
+
 ## `phrases.js`, `grammar.js`, `scenes.js`
 
 See the headers of each file for their shape.

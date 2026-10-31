@@ -2,12 +2,29 @@
 
 import { t, L, levelName } from '../i18n.js';
 import { settings, review, count } from '../store.js';
-import { shell, icon, esc, onLeave, $, $$, check, fiKeys, bindFiKeys, slots, bindSlots, endScreen, normalize } from '../ui.js';
+import { shell, icon, esc, onLeave, $, $$, checkDetail, missFeedback, diffHtml, fiKeys, bindFiKeys, slots, bindSlots, endScreen, normalize } from '../ui.js';
 import { SENTENCES, GRAMMAR_BY_ID, activeLevels, inLevels, pickItems } from '../content.js';
 import { sfx, speak } from '../sound.js';
 
 export const answerOf = (x) => (x.fi.match(/\{([^}]+)\}/) || [])[1] || '';
 export const fullSentence = (x) => x.fi.replace(/[{}]/g, '');
+
+// Besides the gap word itself, accept the learner typing it together with neighbouring words
+// ("minä olen", "olen väsynyt") or the whole sentence.
+function accepted(x, answer) {
+  const forms = [answer, ...(x.alt || [])];
+  const [before, after = ''] = x.fi.split(/\{[^}]+\}/);
+  const pre = before.trim().split(/\s+/).filter(Boolean);
+  const post = after.trim().split(/\s+/).filter(Boolean);
+  const out = [...forms];
+  for (const f of forms) {
+    for (let i = 0; i <= pre.length; i++) for (let j = 0; j <= post.length; j++) {
+      if (i === pre.length && j === 0) continue;
+      out.push([...pre.slice(i), f, ...post.slice(0, j)].join(' '));
+    }
+  }
+  return out;
+}
 
 // A generic gap-fill runner. `opts.visual(item)` can return extra HTML above the sentence.
 export function gapRunner({ items, route, back, titleHtml, eyebrow, keyOf, endTitle, endIcon = 'text-cursor-input', visual, onAfterRender, onCountKind = 'sentences', againFn, onEnd }) {
@@ -61,7 +78,7 @@ export function gapRunner({ items, route, back, titleHtml, eyebrow, keyOf, endTi
     </div>`, { route, game: true });
 
     bindFiKeys();
-    bindSlots($('#gap'), answer, $('#gap-slots'), { revealed: () => state.letters });
+    const updateSlots = bindSlots($('#gap'), answer, $('#gap-slots'), { revealed: () => state.letters });
     $('[data-tr]')?.addEventListener('click', () => { state.tr = true; keepInput(render); });
     $('[data-base]')?.addEventListener('click', () => { state.base = true; state.helped = true; sfx.hint(); keepInput(render); });
     $('[data-letter]')?.addEventListener('click', () => { state.letters = Math.min(Array.from(answer).length - 1, state.letters + 1); state.helped = true; sfx.hint(); keepInput(render); });
@@ -70,14 +87,13 @@ export function gapRunner({ items, route, back, titleHtml, eyebrow, keyOf, endTi
     $('#gap-form')?.addEventListener('submit', (e) => {
       e.preventDefault();
       const input = $('#gap');
-      const res = check(input.value, [answer, ...(x.alt || [])]);
-      if (res === 'empty') return;
-      if (res === 'exact') return finish('good');
-      if (res === 'near' || res === 'umlaut') { state.typo = input.value; return finish('helped'); }
-      sfx.wrong();
+      const res = checkDetail(input.value, accepted(x, answer));
+      if (res.kind === 'empty') return;
+      if (res.kind === 'exact') return finish('good');
+      if (res.kind === 'near' || res.kind === 'umlaut') { state.typo = { kind: res.kind, typed: input.value.trim(), target: res.target }; return finish('good'); }
       state.tries++;
-      input.classList.remove('shake'); void input.offsetWidth; input.classList.add('shake');
-      $('#feedback').textContent = state.tries > 2 ? t('not_quite_n') : t('not_quite');
+      const close = missFeedback($('#feedback'), res, input.value, updateSlots);
+      if (close) sfx.near(); else { sfx.wrong(); input.classList.remove('shake'); void input.offsetWidth; input.classList.add('shake'); }
       input.select();
     });
     $('#gap')?.addEventListener('input', () => { $('#feedback').textContent = ''; });
@@ -93,7 +109,7 @@ export function gapRunner({ items, route, back, titleHtml, eyebrow, keyOf, endTi
     return `<div class="reveal ${good ? 'success' : 'miss'}">
       <div class="panel-label">${good ? icon('sparkles') + ' ' + (state.typo ? t('correct_typo') : t('correct')) : icon('bookmark') + ' ' + t('remember')}</div>
       <div class="word" style="font-size:30px"><span class="fi" lang="fi">${esc(answer)}</span>${x.base && normalize(x.base) !== normalize(answer) ? `<span class="muted" style="font-size:16px;font-family:var(--font);letter-spacing:0">← ${esc(x.base)}</span>` : ''}</div>
-      ${state.typo ? `<div class="trans">${esc(state.typo)} → ${esc(answer)}</div>` : ''}
+      ${state.typo ? `<div class="typo-note">${t('you_wrote')}: <s>${esc(state.typo.typed)}</s> → ${diffHtml(state.typo.typed, state.typo.target)}<span class="muted" style="flex-basis:100%;font-size:13px">${t(state.typo.kind === 'umlaut' ? 'umlaut_ok' : 'typo_ok')}</span></div>` : ''}
       <div class="row between">
         ${g ? `<a class="btn btn-ghost btn-sm" href="#/grammar/${g.id}">${icon('graduation-cap')} ${esc(L(g.title))}</a>` : '<span></span>'}
         <button class="btn btn-primary" data-next>${run.index === run.items.length - 1 ? t('finish') : t('next')} ${icon('arrow-right')} <span class="kbd">↵</span></button>

@@ -2,7 +2,7 @@
 
 import { t, L } from '../i18n.js';
 import { settings, review, count } from '../store.js';
-import { shell, icon, esc, onLeave, $, $$, check, fiKeys, bindFiKeys, slots, bindSlots, endScreen, shuffle } from '../ui.js';
+import { shell, icon, esc, onLeave, $, $$, checkDetail, missFeedback, diffHtml, fiKeys, bindFiKeys, slots, bindSlots, endScreen, shuffle } from '../ui.js';
 import { VERBS, activeLevels, inLevels } from '../content.js';
 import { sfx, speak } from '../sound.js';
 
@@ -111,6 +111,7 @@ function drill(queue) {
         <div>${done ? `<div class="reveal ${st.result === 'miss' ? 'miss' : 'success'}">
             <div class="panel-label">${st.result === 'miss' ? icon('bookmark') + ' ' + t('remember') : icon('sparkles') + ' ' + t('correct')}</div>
             <div class="word" style="font-size:30px"><span class="fi" lang="fi">${PRONOUNS[p]} ${esc(answer)}</span><button class="speak" data-say aria-label="${t('listen_again')}">${icon('volume-2')}</button></div>
+            ${st.typo ? `<div class="typo-note">${t('you_wrote')}: <s>${esc(st.typo.typed)}</s> → ${diffHtml(st.typo.typed, st.typo.target)}<span class="muted" style="flex-basis:100%;font-size:13px">${t(st.typo.kind === 'umlaut' ? 'umlaut_ok' : 'typo_ok')}</span></div>` : ''}
             <div style="margin-top:12px">${conjTable(v, tense, p)}</div>
             <div class="row" style="justify-content:flex-end"><button class="btn btn-primary" data-next>${run.index === run.queue.length - 1 ? t('finish') : t('next')} ${icon('arrow-right')} <span class="kbd">↵</span></button></div>
           </div>` : `<div class="card"><div class="panel-label">${t('tense_pres')}</div><p class="muted" style="margin:6px 0 0">${PRONOUNS.slice(0, 3).map((pr, i) => `${pr} <b class="fi" lang="fi">${esc(i === p && tense === 'pres' ? '…' : v.pres[i])}</b>`).join(' · ')}</p></div>`}</div>
@@ -121,13 +122,12 @@ function drill(queue) {
     $('#vf')?.addEventListener('submit', (e) => {
       e.preventDefault();
       const input = $('#vin');
-      const res = check(input.value, [answer, `${PRONOUNS[p]} ${answer}`]);
-      if (res === 'empty') return;
-      if (res === 'exact') return finish(st.letters ? 'helped' : 'good');
-      if (res === 'near' || res === 'umlaut') return finish('helped');
-      sfx.wrong();
-      input.classList.remove('shake'); void input.offsetWidth; input.classList.add('shake');
-      $('#fb').textContent = t('not_quite');
+      const res = checkDetail(input.value, [answer, `${PRONOUNS[p]} ${answer}`]);
+      if (res.kind === 'empty') return;
+      if (res.kind === 'exact') return finish(st.letters ? 'helped' : 'good');
+      if (res.kind === 'near' || res.kind === 'umlaut') { st.typo = { kind: res.kind, typed: input.value.trim(), target: res.target }; return finish(st.letters ? 'helped' : 'good'); }
+      const close = missFeedback($('#fb'), { ...res, target: answer }, input.value.replace(new RegExp('^' + PRONOUNS[p] + '\\s+', 'i'), ''), updateSlots);
+      if (close) sfx.near(); else { sfx.wrong(); input.classList.remove('shake'); void input.offsetWidth; input.classList.add('shake'); }
       input.select();
     });
     $('[data-letter]')?.addEventListener('click', () => { st.letters = Math.min(Array.from(answer).filter((c) => c !== ' ').length - 1, st.letters + 1); sfx.hint(); updateSlots(); $('#vin').focus(); });
@@ -146,7 +146,7 @@ function drill(queue) {
     if (settings.autoSpeak) setTimeout(() => speak(`${PRONOUNS[p]} ${formOf(v, tense, p)}`), 250);
     render();
   }
-  function start() { st = { result: null, letters: 0 }; render(); }
+  function start() { st = { result: null, letters: 0, typo: null }; render(); }
   function end() {
     sfx.done(); count('verbRuns');
     endScreen({ route: 'verbs', title: t('end_verbs'), iconName: 'dumbbell', back: '#/verbs',

@@ -8,6 +8,7 @@ import { DIALOGUES } from '../data/dialogues.js';
 import { PHRASES, PHRASE_CATS } from '../data/phrases.js';
 import { SCENES } from '../data/scenes.js';
 import { GRAMMAR } from '../data/grammar.js';
+import { READINGS } from '../data/readings.js';
 import { TOPICS } from './i18n.js';
 import { settings, progress, isKnown, isDue, item } from './store.js';
 import { shuffle } from './ui.js';
@@ -23,7 +24,7 @@ export const WORDS = [...WORDS_A, ...WORDS_B].filter((w) => {
 }).map((w) => ({ ...w, key: 'w:' + w.fi, lv: w.lv || 1, topic: TOPICS[w.topic] ? w.topic : 'tools', ex: w.ex || null }));
 
 export const WORD_BY_FI = new Map(WORDS.map((w) => [w.fi, w]));
-export { SENTENCES, VERBS, DIALOGUES, PHRASES, PHRASE_CATS, SCENES, GRAMMAR };
+export { SENTENCES, VERBS, DIALOGUES, PHRASES, PHRASE_CATS, SCENES, GRAMMAR, READINGS };
 export const GRAMMAR_BY_ID = new Map(GRAMMAR.map((g) => [g.id, g]));
 
 // Levels included in practice for the chosen level.
@@ -84,5 +85,6 @@ export function totals() {
     verbs: VERBS.length,
     grammar: GRAMMAR.length,
     scenes: SCENES.length,
+    readings: READINGS.length,
   };
 }

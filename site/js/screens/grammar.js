@@ -2,7 +2,7 @@
 
 import { t, L, levelName } from '../i18n.js';
 import { settings, progress, markDone } from '../store.js';
-import { shell, icon, esc, $, $$, rich, shuffle } from '../ui.js';
+import { shell, icon, esc, $, $$, rich, shuffle, REPO_URL } from '../ui.js';
 import { GRAMMAR, GRAMMAR_BY_ID, SENTENCES, activeLevels, pickItems } from '../content.js';
 import { speak } from '../sound.js';
 import { gapRunner } from './sentences.js';
@@ -56,8 +56,8 @@ function page(g) {
     </div>
     <article class="lesson">
       ${(g.body?.[lang] || g.body?.en || []).map((p) => `<p>${rich(p)}</p>`).join('')}
-      ${g.table?.rows?.length ? `<table class="lesson-table"><thead><tr>${head.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead>
-        <tbody>${g.table.rows.map((r) => `<tr>${r.map((c) => `<td lang="fi">${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>` : ''}
+      ${g.table?.rows?.length ? `<div class="table-scroll"><table class="lesson-table"><thead><tr>${head.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead>
+        <tbody>${g.table.rows.map((r) => `<tr>${r.map((c) => `<td lang="fi">${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : ''}
       ${g.examples?.length ? `<h2 class="section-title" style="margin-top:28px">${t('examples')}</h2>
         <div class="examples">${g.examples.map((e, k) => `<div class="example-row"><button class="speak" data-say="${k}" aria-label="${t('listen_again')}">${icon('volume-2')}</button>
           <span><span class="fi" lang="fi">${esc(e[0])}</span><small>${esc(lang === 'tr' ? e[2] : e[1])}</small></span></div>`).join('')}</div>` : ''}
@@ -65,6 +65,7 @@ function page(g) {
         ${g.quiz?.length ? `<a class="btn btn-primary btn-lg" href="#/grammar/${g.id}?quiz=1">${icon('pencil-line')} ${t('start_quiz')}</a>` : ''}
         ${related ? `<a class="btn btn-lg" href="#/sentences?g=${g.id}">${icon('text-cursor-input')} ${t('m_sentences')} · ${related}</a>` : ''}
       </div>
+      <p class="muted" style="font-size:13px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">${icon('sparkles')} ${t('ai_lesson')} <a href="${REPO_URL}/issues/new" target="_blank" rel="noopener">${t('report')}</a></p>
       <div class="row between" style="border-top:1px solid var(--line);padding-top:20px">
         ${prev ? `<a class="btn btn-ghost" href="#/grammar/${prev.id}">${icon('arrow-left')} ${esc(L(prev.title))}</a>` : '<span></span>'}
         ${next ? `<a class="btn btn-ghost" href="#/grammar/${next.id}">${esc(L(next.title))} ${icon('arrow-right')}</a>` : ''}

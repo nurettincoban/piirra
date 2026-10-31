@@ -19,9 +19,10 @@ import words from './screens/words.js';
 import progressScreen from './screens/progress.js';
 import settingsScreen from './screens/settings.js';
 import about from './screens/about.js';
+import read from './screens/read.js';
 
 const ROUTES = {
-  '': home, learn, play, sentences, verbs, scenes, talk, phrases, numbers, grammar, words,
+  '': home, learn, play, sentences, verbs, scenes, talk, phrases, numbers, grammar, words, read,
   progress: progressScreen, settings: settingsScreen, about,
 };
 
@@ -41,11 +42,22 @@ function render() {
   const changedPage = current !== location.hash;
   current = location.hash;
   screen({ route: ROUTES[route] ? route : '', sub, params });
+  rememberActivity(route, sub, params);
   if (changedPage) {
     window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
   }
 }
 export function rerender() { current = ''; render(); }
+
+// Remember the last practice activity so the home page can offer "Continue: …".
+const ACTIVITY_KEYS = { sentences: 'm_sentences', verbs: 'm_verbs', scenes: 'm_scenes', talk: 'm_talk', phrases: 'm_phrases', numbers: 'm_numbers', grammar: 'm_grammar', read: 'm_read' };
+function rememberActivity(route, sub, params) {
+  let key = null;
+  if (route === 'play') key = params.review ? 'm_review' : { type: 'm_draw', choice: 'm_choice', listen: 'm_listen', reverse: 'm_reverse' }[params.mode] || 'm_draw';
+  else if (ACTIVITY_KEYS[route] && (route !== 'grammar' || sub || params.mix)) key = ACTIVITY_KEYS[route];
+  if (!key) return;
+  setSetting('last', { hash: location.hash, key });
+}
 
 function applyPrefs() {
   const root = document.documentElement;

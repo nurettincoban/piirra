@@ -9,6 +9,7 @@ import { DIALOGUES } from '../site/data/dialogues.js';
 import { PHRASES, PHRASE_CATS } from '../site/data/phrases.js';
 import { SCENES } from '../site/data/scenes.js';
 import { GRAMMAR } from '../site/data/grammar.js';
+const READINGS = await import('../site/data/readings.js').then((m) => m.READINGS).catch(() => []);
 
 const errors = [];
 const fail = (msg) => errors.push(msg);
@@ -81,9 +82,21 @@ for (const s of SCENES) {
   for (const item of s.items) if (!fi.has(item)) fail(`${where}: no picture for ${item}`);
 }
 
+const readIds = new Set();
+for (const r of READINGS) {
+  const where = `reading ${r.id}`;
+  if (readIds.has(r.id)) fail(`${where}: duplicate id`);
+  readIds.add(r.id);
+  if (!r.title?.fi || !r.title?.en || !r.title?.tr) fail(`${where}: missing title`);
+  if (r.icon && !LUCIDE[r.icon]) fail(`${where}: icon ${r.icon} missing from lucide.js`);
+  if (r.trans?.en?.length !== r.text.length || r.trans?.tr?.length !== r.text.length) fail(`${where}: translation paragraphs do not match`);
+  r.questions.forEach((q, i) => { if (!(q.answer >= 0 && q.answer < q.options.length)) fail(`${where} question ${i}: bad answer index`); });
+  lv(r, where);
+}
+
 if (errors.length) {
   console.error(errors.join('\n'));
   console.error(`\n${errors.length} problem(s) found.`);
   process.exit(1);
 }
-console.log(`OK — ${words.length} words, ${SENTENCES.length} sentences, ${VERBS.length} verbs, ${GRAMMAR.length} lessons, ${DIALOGUES.length} dialogues, ${PHRASES.length} phrases, ${SCENES.length} scenes.`);
+console.log(`OK — ${words.length} words, ${SENTENCES.length} sentences, ${VERBS.length} verbs, ${GRAMMAR.length} lessons, ${DIALOGUES.length} dialogues, ${PHRASES.length} phrases, ${SCENES.length} scenes, ${READINGS.length} readings.`);

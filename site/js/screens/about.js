@@ -14,6 +14,11 @@ export default function about() {
       <p>${t('about_p1')}</p>
       <p>${t('about_p2')}</p>
       <p>${t('about_p3')}</p>
+      <div class="ai-box">${icon('sparkles')}<div>
+        <h2>${t('ai_title')}</h2>
+        <p>${t('ai_p')}</p>
+        <a class="btn btn-sm" href="${REPO_URL}/issues/new" target="_blank" rel="noopener">${icon('flag')} ${t('report')}</a>
+      </div></div>
       <div class="stat-grid" style="margin:24px 0">
         <div class="stat"><strong>${n.words}</strong><span>${t('meta_words')}</span></div>
         <div class="stat"><strong>${n.sentences}</strong><span>${t('m_sentences')}</span></div>

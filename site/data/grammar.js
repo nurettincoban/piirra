@@ -70,7 +70,12 @@ export const GRAMMAR = [
       { fi: 'Kävelemme {metsässä}.', base: 'metsä', en: 'We are walking in the forest.', tr: 'Ormanda yürüyoruz.' },
       { fi: 'Asumme pienessä {kylässä}.', base: 'kylä', en: 'We live in a small village.', tr: 'Küçük bir köyde yaşıyoruz.' },
       { fi: 'Istun {junassa}.', base: 'juna', en: 'I\'m sitting on the train.', tr: 'Trende oturuyorum.' },
-      { fi: 'Pyyhe on {kylpyhuoneessa}.', base: 'kylpyhuone', en: 'The towel is in the bathroom.', tr: 'Havlu banyoda.' }
+      { fi: 'Pyyhe on {kylpyhuoneessa}.', base: 'kylpyhuone', en: 'The towel is in the bathroom.', tr: 'Havlu banyoda.' },
+      { fi: 'Pöytä on {olohuoneessa}.', base: 'olohuone', en: 'The table is in the living room.', tr: 'Masa oturma odasında.' },
+      { fi: '{Tiedätkö}, missä asema on?', base: 'tietää', en: 'Do you know where the station is?', tr: 'İstasyonun nerede olduğunu biliyor musun?' },
+      { fi: 'Olen {mökillä}.', base: 'mökki', en: 'I\'m at the summer cottage.', tr: 'Yazlıktayım.' },
+      { fi: 'Asun {kerrostalossa}.', base: 'kerrostalo', en: 'I live in a block of flats.', tr: 'Apartmanda oturuyorum.' },
+      { fi: 'Pidän {jäätelöstä}.', base: 'jäätelö', en: 'I like ice cream.', tr: 'Dondurmayı severim.' }
     ]
   },
   {
@@ -105,7 +110,11 @@ export const GRAMMAR = [
       { fi: 'Me {olemme} Suomessa.', base: 'olla', en: 'We are in Finland.', tr: 'Finlandiya\'dayız.' },
       { fi: 'Lapset {ovat} koulussa.', base: 'olla', en: 'The children are at school.', tr: 'Çocuklar okulda.' },
       { fi: 'Te {olette} myöhässä.', base: 'olla', en: 'You are late.', tr: 'Geç kaldınız.' },
-      { fi: 'Tämä kirja {on} hyvä.', base: 'olla', en: 'This book is good.', tr: 'Bu kitap güzel.' }
+      { fi: 'Tämä kirja {on} hyvä.', base: 'olla', en: 'This book is good.', tr: 'Bu kitap güzel.' },
+      { fi: 'Minulla {on} kaksi veljeä.', base: 'olla', en: 'I have two brothers.', tr: 'İki erkek kardeşim var.' },
+      { fi: 'He {ovat} Turusta.', base: 'olla', en: 'They are from Turku.', tr: 'Onlar Turkulu.' },
+      { fi: 'Minä {olen} väsynyt.', base: 'olla', en: 'I am tired.', tr: 'Yorgunum.' },
+      { fi: 'Kahvi {on} kuumaa.', base: 'olla', en: 'The coffee is hot.', tr: 'Kahve sıcak.' }
     ]
   },
   {
@@ -139,7 +148,11 @@ export const GRAMMAR = [
       { fi: 'Me {ostamme} leipää.', base: 'ostaa', en: 'We are buying bread.', tr: 'Ekmek alıyoruz.' },
       { fi: 'Sinä {luet} kirjaa.', base: 'lukea', en: 'You are reading a book.', tr: 'Kitap okuyorsun.' },
       { fi: 'He {kirjoittavat} kirjettä.', base: 'kirjoittaa', en: 'They are writing a letter.', tr: 'Mektup yazıyorlar.' },
-      { fi: 'Te {kysytte} paljon.', base: 'kysyä', en: 'You ask a lot.', tr: 'Çok soru soruyorsunuz.' }
+      { fi: 'Te {kysytte} paljon.', base: 'kysyä', en: 'You ask a lot.', tr: 'Çok soru soruyorsunuz.' },
+      { fi: 'Hän {lukee} lehteä.', base: 'lukea', en: 'He is reading the newspaper.', tr: 'Gazete okuyor.' },
+      { fi: 'He {puhuvat} englantia.', base: 'puhua', en: 'They speak English.', tr: 'İngilizce konuşuyorlar.' },
+      { fi: 'Me {kirjoitamme} viestiä.', base: 'kirjoittaa', en: 'We are writing a message.', tr: 'Mesaj yazıyoruz.' },
+      { fi: 'Mitä sinä {ostat}?', base: 'ostaa', en: 'What are you buying?', tr: 'Ne alıyorsun?' }
     ]
   },
   {
@@ -173,7 +186,11 @@ export const GRAMMAR = [
       { fi: 'Me {saamme} lahjan.', base: 'saada', en: 'We get a present.', tr: 'Bir hediye alıyoruz.' },
       { fi: 'He {käyvät} kaupassa.', base: 'käydä', en: 'They go to the shop.', tr: 'Markete gidiyorlar.' },
       { fi: 'Mitä sinä {teet}?', base: 'tehdä', en: 'What are you doing?', tr: 'Ne yapıyorsun?' },
-      { fi: 'Minä {näen} meren.', base: 'nähdä', en: 'I can see the sea.', tr: 'Denizi görüyorum.' }
+      { fi: 'Minä {näen} meren.', base: 'nähdä', en: 'I can see the sea.', tr: 'Denizi görüyorum.' },
+      { fi: 'Te {syötte} paljon.', base: 'syödä', en: 'You eat a lot.', tr: 'Çok yiyorsunuz.' },
+      { fi: 'Sinä {juot} teetä.', base: 'juoda', en: 'You drink tea.', tr: 'Çay içiyorsun.' },
+      { fi: 'He {tekevät} töitä.', base: 'tehdä', en: 'They are working.', tr: 'Çalışıyorlar.' },
+      { fi: 'Me {voimme} auttaa.', base: 'voida', en: 'We can help.', tr: 'Yardım edebiliriz.' }
     ]
   },
   {
@@ -207,7 +224,11 @@ export const GRAMMAR = [
       { fi: 'Me {opiskelemme} suomea.', base: 'opiskella', en: 'We study Finnish.', tr: 'Fince öğreniyoruz.' },
       { fi: 'Sinä {nouset} aikaisin.', base: 'nousta', en: 'You get up early.', tr: 'Erken kalkıyorsun.' },
       { fi: 'He {kuuntelevat} musiikkia.', base: 'kuunnella', en: 'They are listening to music.', tr: 'Müzik dinliyorlar.' },
-      { fi: 'Te {pesette} kädet.', base: 'pestä', en: 'You wash your hands.', tr: 'Ellerinizi yıkıyorsunuz.' }
+      { fi: 'Te {pesette} kädet.', base: 'pestä', en: 'You wash your hands.', tr: 'Ellerinizi yıkıyorsunuz.' },
+      { fi: 'Minä {menen} nukkumaan.', base: 'mennä', en: 'I\'m going to bed.', tr: 'Yatmaya gidiyorum.' },
+      { fi: 'He {tulevat} huomenna.', base: 'tulla', en: 'They are coming tomorrow.', tr: 'Yarın geliyorlar.' },
+      { fi: 'Me {kävelemme} puistossa.', base: 'kävellä', en: 'We are walking in the park.', tr: 'Parkta yürüyoruz.' },
+      { fi: 'Hän {pesee} astiat.', base: 'pestä', en: 'He washes the dishes.', tr: 'Bulaşıkları yıkıyor.' }
     ]
   },
   {
@@ -243,7 +264,11 @@ export const GRAMMAR = [
       { fi: 'Me {tapaamme} huomenna.', base: 'tavata', en: 'We\'ll meet tomorrow.', tr: 'Yarın buluşuyoruz.' },
       { fi: 'Sinä {tarvitset} sateenvarjon.', base: 'tarvita', en: 'You need an umbrella.', tr: 'Şemsiyeye ihtiyacın var.' },
       { fi: 'He {avaavat} oven.', base: 'avata', en: 'They open the door.', tr: 'Kapıyı açıyorlar.' },
-      { fi: 'Mitä sinä {valitset}?', base: 'valita', en: 'What do you choose?', tr: 'Neyi seçiyorsun?' }
+      { fi: 'Mitä sinä {valitset}?', base: 'valita', en: 'What do you choose?', tr: 'Neyi seçiyorsun?' },
+      { fi: 'Hän {haluaa} jäätelöä.', base: 'haluta', en: 'She wants ice cream.', tr: 'Dondurma istiyor.' },
+      { fi: 'Sinä {osaat} suomea hyvin.', base: 'osata', en: 'You know Finnish well.', tr: 'Finceyi iyi biliyorsun.' },
+      { fi: 'Minä {tapaan} ystäväni kahvilassa.', base: 'tavata', en: 'I\'m meeting my friend at the café.', tr: 'Arkadaşımla kafede buluşuyorum.' },
+      { fi: 'Te {tarvitsette} apua.', base: 'tarvita', en: 'You need help.', tr: 'Yardıma ihtiyacınız var.' }
     ]
   },
   {
@@ -277,7 +302,11 @@ export const GRAMMAR = [
       { fi: 'Me {emme} asu täällä.', base: 'ei', en: 'We don\'t live here.', tr: 'Burada oturmuyoruz.' },
       { fi: 'Sinä et {syö} lihaa.', base: 'syödä', en: 'You don\'t eat meat.', tr: 'Et yemiyorsun.' },
       { fi: 'He {eivät} ole kotona.', base: 'ei', en: 'They are not at home.', tr: 'Evde değiller.' },
-      { fi: 'En {ymmärrä} tätä.', base: 'ymmärtää', en: 'I don\'t understand this.', tr: 'Bunu anlamıyorum.' }
+      { fi: 'En {ymmärrä} tätä.', base: 'ymmärtää', en: 'I don\'t understand this.', tr: 'Bunu anlamıyorum.' },
+      { fi: 'Te {ette} ole myöhässä.', base: 'ei', en: 'You are not late.', tr: 'Geç kalmadınız.' },
+      { fi: 'Hän {ei} tiedä vastausta.', base: 'ei', en: 'She doesn\'t know the answer.', tr: 'Cevabı bilmiyor.' },
+      { fi: 'Minä en {juo} kahvia.', base: 'juoda', en: 'I don\'t drink coffee.', tr: 'Kahve içmem.' },
+      { fi: 'He eivät {puhu} englantia.', base: 'puhua', en: 'They don\'t speak English.', tr: 'İngilizce konuşmuyorlar.' }
     ]
   },
   {
@@ -311,7 +340,11 @@ export const GRAMMAR = [
       { fi: '{Tuletko} huomenna?', base: 'tulla', en: 'Are you coming tomorrow?', tr: 'Yarın geliyor musun?' },
       { fi: '{Asutteko} te Turussa?', base: 'asua', en: 'Do you live in Turku?', tr: 'Turku\'da mı oturuyorsunuz?' },
       { fi: '{Syökö} hän lihaa?', base: 'syödä', en: 'Does she eat meat?', tr: 'O et yiyor mu?' },
-      { fi: '{Ymmärrätkö} minua?', base: 'ymmärtää', en: 'Do you understand me?', tr: 'Beni anlıyor musun?' }
+      { fi: '{Ymmärrätkö} minua?', base: 'ymmärtää', en: 'Do you understand me?', tr: 'Beni anlıyor musun?' },
+      { fi: '{Oletko} sinä kotona?', base: 'olla', en: 'Are you at home?', tr: 'Evde misin?' },
+      { fi: '{Haluatko} kahvia?', base: 'haluta', en: 'Do you want some coffee?', tr: 'Kahve ister misin?' },
+      { fi: '{Tunnetko} hänet?', base: 'tuntea', en: 'Do you know him?', tr: 'Onu tanıyor musun?' },
+      { fi: '{Menevätkö} he kauppaan?', base: 'mennä', en: 'Are they going to the shop?', tr: 'Markete gidiyorlar mı?' }
     ]
   },
   {
@@ -345,7 +378,11 @@ export const GRAMMAR = [
       { fi: 'Maito on {jääkaapissa}.', base: 'jääkaappi', en: 'The milk is in the fridge.', tr: 'Süt buzdolabında.' },
       { fi: 'Asumme {Suomessa}.', base: 'Suomi', en: 'We live in Finland.', tr: 'Finlandiya\'da yaşıyoruz.' },
       { fi: 'Hän on {kaupassa}.', base: 'kauppa', en: 'She is at the shop.', tr: 'Markette.' },
-      { fi: 'Avaimet ovat {laukussa}.', base: 'laukku', en: 'The keys are in the bag.', tr: 'Anahtarlar çantada.' }
+      { fi: 'Avaimet ovat {laukussa}.', base: 'laukku', en: 'The keys are in the bag.', tr: 'Anahtarlar çantada.' },
+      { fi: 'Olen {kirjastossa}.', base: 'kirjasto', en: 'I\'m in the library.', tr: 'Kütüphanedeyim.' },
+      { fi: 'Asun {Turussa}.', base: 'Turku', en: 'I live in Turku.', tr: 'Turku\'da oturuyorum.' },
+      { fi: 'Kahvi on {kupissa}.', base: 'kuppi', en: 'The coffee is in the cup.', tr: 'Kahve fincanda.' },
+      { fi: 'Hän työskentelee {sairaalassa}.', base: 'sairaala', en: 'She works in a hospital.', tr: 'Hastanede çalışıyor.' }
     ]
   },
   {
@@ -379,7 +416,11 @@ export const GRAMMAR = [
       { fi: 'Olen kotoisin {Turkista}.', base: 'Turkki', en: 'I\'m from Turkey.', tr: 'Türkiye\'denim.' },
       { fi: 'Pidän {kahvista}.', base: 'kahvi', en: 'I like coffee.', tr: 'Kahveyi severim.' },
       { fi: 'Puhumme {elokuvasta}.', base: 'elokuva', en: 'We are talking about the film.', tr: 'Film hakkında konuşuyoruz.' },
-      { fi: 'Lähden {koulusta} kolmelta.', base: 'koulu', en: 'I leave school at three.', tr: 'Okuldan saat üçte çıkıyorum.' }
+      { fi: 'Lähden {koulusta} kolmelta.', base: 'koulu', en: 'I leave school at three.', tr: 'Okuldan saat üçte çıkıyorum.' },
+      { fi: 'Hän tulee {kirjastosta}.', base: 'kirjasto', en: 'She is coming from the library.', tr: 'Kütüphaneden geliyor.' },
+      { fi: 'Otan kirjan {laukusta}.', base: 'laukku', en: 'I take the book out of the bag.', tr: 'Kitabı çantadan çıkarıyorum.' },
+      { fi: 'Tämä kirje on {Suomesta}.', base: 'Suomi', en: 'This letter is from Finland.', tr: 'Bu mektup Finlandiya\'dan.' },
+      { fi: 'Pidän {musiikista}.', base: 'musiikki', en: 'I like music.', tr: 'Müziği severim.' }
     ]
   },
   {
@@ -413,7 +454,11 @@ export const GRAMMAR = [
       { fi: 'Laita maito {jääkaappiin}.', base: 'jääkaappi', en: 'Put the milk in the fridge.', tr: 'Sütü buzdolabına koy.' },
       { fi: 'Hän menee {huoneeseen}.', base: 'huone', en: 'He goes into the room.', tr: 'Odaya giriyor.' },
       { fi: 'Matkustan {Turkkiin}.', base: 'Turkki', en: 'I\'m travelling to Turkey.', tr: 'Türkiye\'ye gidiyorum.' },
-      { fi: 'Kissa hyppää {laatikkoon}.', base: 'laatikko', en: 'The cat jumps into the box.', tr: 'Kedi kutuya atlıyor.' }
+      { fi: 'Kissa hyppää {laatikkoon}.', base: 'laatikko', en: 'The cat jumps into the box.', tr: 'Kedi kutuya atlıyor.' },
+      { fi: 'Menen {kouluun}.', base: 'koulu', en: 'I\'m going to school.', tr: 'Okula gidiyorum.' },
+      { fi: 'Laitan kirjan {laukkuun}.', base: 'laukku', en: 'I put the book in the bag.', tr: 'Kitabı çantaya koyuyorum.' },
+      { fi: 'Tule {saunaan}!', base: 'sauna', en: 'Come to the sauna!', tr: 'Saunaya gel!' },
+      { fi: 'He muuttavat {Helsinkiin}.', base: 'Helsinki', en: 'They are moving to Helsinki.', tr: 'Helsinki\'ye taşınıyorlar.' }
     ]
   },
   {
@@ -447,7 +492,11 @@ export const GRAMMAR = [
       { fi: 'Menen töihin {bussilla}.', base: 'bussi', en: 'I go to work by bus.', tr: 'İşe otobüsle gidiyorum.' },
       { fi: 'Odotan {asemalla}.', base: 'asema', en: 'I\'m waiting at the station.', tr: 'İstasyonda bekliyorum.' },
       { fi: '{Kesällä} on lämmin.', base: 'kesä', en: 'It\'s warm in summer.', tr: 'Yazın hava sıcak olur.' },
-      { fi: 'Onko {sinulla} aikaa?', base: 'sinä', en: 'Do you have time?', tr: 'Vaktin var mı?' }
+      { fi: 'Onko {sinulla} aikaa?', base: 'sinä', en: 'Do you have time?', tr: 'Vaktin var mı?' },
+      { fi: 'Onko {teillä} lapsia?', base: 'te', en: 'Do you have children?', tr: 'Çocuğunuz var mı?' },
+      { fi: 'Matkustan {junalla}.', base: 'juna', en: 'I travel by train.', tr: 'Trenle seyahat ediyorum.' },
+      { fi: 'Kuppi on {hyllyllä}.', base: 'hylly', en: 'The cup is on the shelf.', tr: 'Fincan rafta.' },
+      { fi: '{Aamulla} juon kahvia.', base: 'aamu', en: 'In the morning I drink coffee.', tr: 'Sabahları kahve içerim.' }
     ]
   },
   {
@@ -481,7 +530,11 @@ export const GRAMMAR = [
       { fi: 'Tulen {torilta}.', base: 'tori', en: 'I\'m coming from the market square.', tr: 'Pazar yerinden geliyorum.' },
       { fi: 'Ruoka maistuu {hyvältä}.', base: 'hyvä', en: 'The food tastes good.', tr: 'Yemeğin tadı güzel.' },
       { fi: 'Kysy {opettajalta}!', base: 'opettaja', en: 'Ask the teacher!', tr: 'Öğretmene sor!' },
-      { fi: 'Voinko lainata {sinulta} kynää?', base: 'sinä', en: 'Can I borrow a pen from you?', tr: 'Senden bir kalem ödünç alabilir miyim?' }
+      { fi: 'Voinko lainata {sinulta} kynää?', base: 'sinä', en: 'Can I borrow a pen from you?', tr: 'Senden bir kalem ödünç alabilir miyim?' },
+      { fi: 'Sain kirjeen {äidiltä}.', base: 'äiti', en: 'I got a letter from Mum.', tr: 'Annemden bir mektup aldım.' },
+      { fi: 'Otan kupin {hyllyltä}.', base: 'hylly', en: 'I take the cup off the shelf.', tr: 'Fincanı raftan alıyorum.' },
+      { fi: 'Kysyn {häneltä}.', base: 'hän', en: 'I\'ll ask him.', tr: 'Ona soracağım.' },
+      { fi: 'Hän tulee {asemalta}.', base: 'asema', en: 'He is coming from the station.', tr: 'İstasyondan geliyor.' }
     ]
   },
   {
@@ -513,7 +566,11 @@ export const GRAMMAR = [
       { fi: 'Soitan {sinulle} illalla.', base: 'sinä', en: 'I\'ll call you in the evening.', tr: 'Akşam seni ararım.' },
       { fi: 'Menemme {torille}.', base: 'tori', en: 'We are going to the market square.', tr: 'Pazar yerine gidiyoruz.' },
       { fi: 'Kerro {hänelle} terveisiä.', base: 'hän', en: 'Say hello to him from me.', tr: 'Ona selamımı söyle.' },
-      { fi: 'Kirjoitan viestin {opettajalle}.', base: 'opettaja', en: 'I\'m writing a message to the teacher.', tr: 'Öğretmene mesaj yazıyorum.' }
+      { fi: 'Kirjoitan viestin {opettajalle}.', base: 'opettaja', en: 'I\'m writing a message to the teacher.', tr: 'Öğretmene mesaj yazıyorum.' },
+      { fi: 'Annan lahjan {ystävälle}.', base: 'ystävä', en: 'I give the present to a friend.', tr: 'Hediyeyi bir arkadaşıma veriyorum.' },
+      { fi: 'Laita kirja {hyllylle}.', base: 'hylly', en: 'Put the book on the shelf.', tr: 'Kitabı rafa koy.' },
+      { fi: 'Menemme {asemalle}.', base: 'asema', en: 'We are going to the station.', tr: 'İstasyona gidiyoruz.' },
+      { fi: 'Kerron sen {teille} huomenna.', base: 'te', en: 'I\'ll tell you tomorrow.', tr: 'Yarın size anlatırım.' }
     ]
   },
   {
@@ -547,7 +604,11 @@ export const GRAMMAR = [
       { fi: '{Suomen} pääkaupunki on Helsinki.', base: 'Suomi', en: 'The capital of Finland is Helsinki.', tr: 'Finlandiya\'nın başkenti Helsinki\'dir.' },
       { fi: 'Tämä on {minun} laukkuni.', base: 'minä', en: 'This is my bag.', tr: 'Bu benim çantam.' },
       { fi: 'Kissa istuu {oven} edessä.', base: 'ovi', en: 'The cat is sitting in front of the door.', tr: 'Kedi kapının önünde oturuyor.' },
-      { fi: '{Kaupan} ovi on auki.', base: 'kauppa', en: 'The shop door is open.', tr: 'Marketin kapısı açık.' }
+      { fi: '{Kaupan} ovi on auki.', base: 'kauppa', en: 'The shop door is open.', tr: 'Marketin kapısı açık.' },
+      { fi: 'Tämä on {Pekan} kirja.', base: 'Pekka', en: 'This is Pekka\'s book.', tr: 'Bu Pekka\'nın kitabı.' },
+      { fi: 'Mikä on {sinun} nimesi?', base: 'sinä', en: 'What is your name?', tr: 'Senin adın ne?' },
+      { fi: '{Koiran} nimi on Musti.', base: 'koira', en: 'The dog\'s name is Musti.', tr: 'Köpeğin adı Musti.' },
+      { fi: 'Missä on {opettajan} huone?', base: 'opettaja', en: 'Where is the teacher\'s room?', tr: 'Öğretmenin odası nerede?' }
     ]
   },
   {
@@ -581,7 +642,11 @@ export const GRAMMAR = [
       { fi: 'Luokassa on {kymmenen} oppilasta.', base: '10', en: 'There are ten pupils in the class.', tr: 'Sınıfta on öğrenci var.' },
       { fi: 'Kahvi maksaa {kolme} euroa.', base: '3', en: 'The coffee costs three euros.', tr: 'Kahve üç euro.' },
       { fi: 'Meillä on kaksi {autoa}.', base: 'auto', en: 'We have two cars.', tr: 'İki arabamız var.' },
-      { fi: 'Talossa on {seitsemän} huonetta.', base: '7', en: 'The house has seven rooms.', tr: 'Evde yedi oda var.' }
+      { fi: 'Talossa on {seitsemän} huonetta.', base: '7', en: 'The house has seven rooms.', tr: 'Evde yedi oda var.' },
+      { fi: 'Minulla on kolme {lasta}.', base: 'lapsi', en: 'I have three children.', tr: 'Üç çocuğum var.' },
+      { fi: 'Puistossa on viisi {koiraa}.', base: 'koira', en: 'There are five dogs in the park.', tr: 'Parkta beş köpek var.' },
+      { fi: 'Kaksi plus kaksi on {neljä}.', base: '4', en: 'Two plus two is four.', tr: 'İki artı iki dört eder.' },
+      { fi: 'Vuodessa on {kaksitoista} kuukautta.', base: '12', en: 'There are twelve months in a year.', tr: 'Bir yılda on iki ay var.' }
     ]
   },
   {
@@ -615,7 +680,11 @@ export const GRAMMAR = [
       { fi: '{Kaupat} ovat kiinni sunnuntaina.', base: 'kauppa', en: 'The shops are closed on Sunday.', tr: 'Dükkânlar pazar günü kapalı.' },
       { fi: 'Nämä {kirjat} ovat uusia.', base: 'kirja', en: 'These books are new.', tr: 'Bu kitaplar yeni.' },
       { fi: '{Ystävät} tulevat illalla.', base: 'ystävä', en: 'The friends are coming in the evening.', tr: 'Arkadaşlar akşam geliyor.' },
-      { fi: '{Huoneet} ovat isoja.', base: 'huone', en: 'The rooms are big.', tr: 'Odalar büyük.' }
+      { fi: '{Huoneet} ovat isoja.', base: 'huone', en: 'The rooms are big.', tr: 'Odalar büyük.' },
+      { fi: '{Kukat} ovat kauniita.', base: 'kukka', en: 'The flowers are beautiful.', tr: 'Çiçekler çok güzel.' },
+      { fi: 'Missä {avaimet} ovat?', base: 'avain', en: 'Where are the keys?', tr: 'Anahtarlar nerede?' },
+      { fi: '{Koirat} haukkuvat.', base: 'koira', en: 'The dogs are barking.', tr: 'Köpekler havlıyor.' },
+      { fi: 'Nämä {kengät} ovat liian pienet.', base: 'kenkä', en: 'These shoes are too small.', tr: 'Bu ayakkabılar çok küçük.' }
     ]
   },
 
@@ -652,7 +721,11 @@ export const GRAMMAR = [
       { fi: 'Odotan {bussia}.', base: 'bussi', en: 'I\'m waiting for the bus.', tr: 'Otobüs bekliyorum.' },
       { fi: 'En syö {lihaa}.', base: 'liha', en: 'I don\'t eat meat.', tr: 'Et yemem.' },
       { fi: 'Juon paljon {vettä}.', base: 'vesi', en: 'I drink a lot of water.', tr: 'Çok su içerim.' },
-      { fi: 'Rakastan {sinua}.', base: 'sinä', en: 'I love you.', tr: 'Seni seviyorum.' }
+      { fi: 'Rakastan {sinua}.', base: 'sinä', en: 'I love you.', tr: 'Seni seviyorum.' },
+      { fi: 'Juotko {teetä}?', base: 'tee', en: 'Do you drink tea?', tr: 'Çay içer misin?' },
+      { fi: 'Otan vähän {leipää}.', base: 'leipä', en: 'I\'ll take a little bread.', tr: 'Biraz ekmek alayım.' },
+      { fi: 'Minulla ei ole {autoa}.', base: 'auto', en: 'I don\'t have a car.', tr: 'Arabam yok.' },
+      { fi: 'Lasissa on {mehua}.', base: 'mehu', en: 'There is juice in the glass.', tr: 'Bardakta meyve suyu var.' }
     ]
   },
   {
@@ -686,7 +759,11 @@ export const GRAMMAR = [
       { fi: 'Meillä ei ole {lapsia}.', base: 'lapsi', en: 'We don\'t have children.', tr: 'Çocuğumuz yok.' },
       { fi: 'Puistossa on {koiria}.', base: 'koira', en: 'There are dogs in the park.', tr: 'Parkta köpekler var.' },
       { fi: 'Kaupassa on {banaaneja}.', base: 'banaani', en: 'There are bananas in the shop.', tr: 'Markette muz var.' },
-      { fi: 'Täällä on paljon {puita}.', base: 'puu', en: 'There are lots of trees here.', tr: 'Burada çok ağaç var.' }
+      { fi: 'Täällä on paljon {puita}.', base: 'puu', en: 'There are lots of trees here.', tr: 'Burada çok ağaç var.' },
+      { fi: 'Puutarhassa on paljon {kukkia}.', base: 'kukka', en: 'There are lots of flowers in the garden.', tr: 'Bahçede bir sürü çiçek var.' },
+      { fi: 'Minulla on hyviä {ystäviä}.', base: 'ystävä', en: 'I have good friends.', tr: 'İyi arkadaşlarım var.' },
+      { fi: 'Kaupassa ei ole {tomaatteja}.', base: 'tomaatti', en: 'There are no tomatoes in the shop.', tr: 'Markette domates yok.' },
+      { fi: 'Taivaalla on {pilviä}.', base: 'pilvi', en: 'There are clouds in the sky.', tr: 'Gökyüzünde bulutlar var.' }
     ]
   },
   {
@@ -720,7 +797,11 @@ export const GRAMMAR = [
       { fi: 'Me {olimme} Lapissa viime viikolla.', base: 'olla', en: 'We were in Lapland last week.', tr: 'Geçen hafta Laponya\'daydık.' },
       { fi: 'He {söivät} pizzaa.', base: 'syödä', en: 'They ate pizza.', tr: 'Pizza yediler.' },
       { fi: 'Sinä {tulit} myöhään.', base: 'tulla', en: 'You came late.', tr: 'Geç geldin.' },
-      { fi: 'Minä {halusin} uuden puhelimen.', base: 'haluta', en: 'I wanted a new phone.', tr: 'Yeni bir telefon istedim.' }
+      { fi: 'Minä {halusin} uuden puhelimen.', base: 'haluta', en: 'I wanted a new phone.', tr: 'Yeni bir telefon istedim.' },
+      { fi: 'Ennen minä {asuin} Turussa.', base: 'asua', en: 'I used to live in Turku.', tr: 'Eskiden Turku\'da oturuyordum.' },
+      { fi: 'Eilen me {menimme} elokuviin.', base: 'mennä', en: 'Yesterday we went to the cinema.', tr: 'Dün sinemaya gittik.' },
+      { fi: 'Hän {osti} uuden auton viime viikolla.', base: 'ostaa', en: 'He bought a new car last week.', tr: 'Geçen hafta yeni bir araba aldı.' },
+      { fi: 'Te {teitte} eilen hyvää työtä.', base: 'tehdä', en: 'You did good work yesterday.', tr: 'Dün iyi iş çıkardınız.' }
     ]
   },
   {
@@ -754,7 +835,11 @@ export const GRAMMAR = [
       { fi: 'Emme {ostaneet} mitään.', base: 'ostaa', en: 'We didn\'t buy anything.', tr: 'Hiçbir şey almadık.' },
       { fi: 'Et {ollut} kotona.', base: 'olla', en: 'You weren\'t at home.', tr: 'Evde değildin.' },
       { fi: 'He eivät {syöneet} aamupalaa.', base: 'syödä', en: 'They didn\'t eat breakfast.', tr: 'Kahvaltı yapmadılar.' },
-      { fi: 'Minä en {ymmärtänyt} kysymystä.', base: 'ymmärtää', en: 'I didn\'t understand the question.', tr: 'Soruyu anlamadım.' }
+      { fi: 'Minä en {ymmärtänyt} kysymystä.', base: 'ymmärtää', en: 'I didn\'t understand the question.', tr: 'Soruyu anlamadım.' },
+      { fi: 'Eilen en {käynyt} kaupassa.', base: 'käydä', en: 'I didn\'t go to the shop yesterday.', tr: 'Dün markete gitmedim.' },
+      { fi: 'Satoi, joten emme {menneet} ulos.', base: 'mennä', en: 'It was raining, so we didn\'t go out.', tr: 'Yağmur yağıyordu, o yüzden dışarı çıkmadık.' },
+      { fi: 'Hän ei {puhunut} eilen mitään.', base: 'puhua', en: 'He didn\'t say anything yesterday.', tr: 'Dün hiçbir şey konuşmadı.' },
+      { fi: 'Ette {tehneet} läksyjä viime viikolla.', base: 'tehdä', en: 'You didn\'t do your homework last week.', tr: 'Geçen hafta ödevlerinizi yapmadınız.' }
     ]
   },
   {
@@ -788,7 +873,11 @@ export const GRAMMAR = [
       { fi: 'En löydä {avainta}.', base: 'avain', en: 'I can\'t find the key.', tr: 'Anahtarı bulamıyorum.' },
       { fi: 'Söin kaikki {omenat}.', base: 'omena', en: 'I ate all the apples.', tr: 'Bütün elmaları yedim.' },
       { fi: 'Näin {sinut} kaupassa.', base: 'sinä', en: 'I saw you in the shop.', tr: 'Seni markette gördüm.' },
-      { fi: 'Avaa {ikkuna}, kiitos!', base: 'ikkuna', en: 'Open the window, please!', tr: 'Pencereyi aç, lütfen!' }
+      { fi: 'Avaa {ikkuna}, kiitos!', base: 'ikkuna', en: 'Open the window, please!', tr: 'Pencereyi aç, lütfen!' },
+      { fi: 'Söin koko {omenan}.', base: 'omena', en: 'I ate the whole apple.', tr: 'Elmanın hepsini yedim.' },
+      { fi: 'En osta {autoa}.', base: 'auto', en: 'I won\'t buy a car.', tr: 'Araba almayacağım.' },
+      { fi: 'Sulje {ovi}, kiitos!', base: 'ovi', en: 'Close the door, please!', tr: 'Kapıyı kapat, lütfen!' },
+      { fi: 'Kutsuin {heidät} juhliin.', base: 'he', en: 'I invited them to the party.', tr: 'Onları partiye davet ettim.' }
     ]
   },
   {
@@ -822,7 +911,11 @@ export const GRAMMAR = [
       { fi: 'Pidän {koirista}.', base: 'koira', en: 'I like dogs.', tr: 'Köpekleri severim.' },
       { fi: 'Annan ruokaa {linnuille}.', base: 'lintu', en: 'I give food to the birds.', tr: 'Kuşlara yem veriyorum.' },
       { fi: '{Lasten} huone on siisti.', base: 'lapsi', en: 'The children\'s room is tidy.', tr: 'Çocukların odası düzenli.' },
-      { fi: 'Kirjoitan {ystäville}.', base: 'ystävä', en: 'I\'m writing to my friends.', tr: 'Arkadaşlarıma yazıyorum.' }
+      { fi: 'Kerron {lapsille} tarinan.', base: 'lapsi', en: 'I tell the children a story.', tr: 'Çocuklara bir hikâye anlatıyorum.' },
+      { fi: 'Kaikkien {talojen} katot ovat punaisia.', base: 'talo', en: 'The roofs of all the houses are red.', tr: 'Bütün evlerin çatıları kırmızı.' },
+      { fi: 'Opettaja puhuu kaikille {oppilaille}.', base: 'oppilas', en: 'The teacher is talking to all the pupils.', tr: 'Öğretmen bütün öğrencilerle konuşuyor.' },
+      { fi: 'Monissa {järvissä} on kaloja.', base: 'järvi', en: 'There are fish in many lakes.', tr: 'Birçok gölde balık var.' },
+      { fi: 'Sain lahjoja monilta {ystäviltä}.', base: 'ystävä', en: 'I got presents from many friends.', tr: 'Birçok arkadaşımdan hediye aldım.' }
     ]
   },
   {
@@ -856,7 +949,11 @@ export const GRAMMAR = [
       { fi: 'Veljeni on {vanhempi} kuin minä.', base: 'vanha', en: 'My brother is older than me.', tr: 'Ağabeyim benden büyük.' },
       { fi: 'Sää on tänään {parempi} kuin eilen.', base: 'hyvä', en: 'The weather is better today than yesterday.', tr: 'Hava bugün dünden daha iyi.' },
       { fi: 'Kesä on {lämpimämpi} kuin talvi.', base: 'lämmin', en: 'Summer is warmer than winter.', tr: 'Yaz kıştan daha sıcak.' },
-      { fi: 'Kissa on {pienempi} kuin koira.', base: 'pieni', en: 'The cat is smaller than the dog.', tr: 'Kedi köpekten daha küçük.' }
+      { fi: 'Kissa on {pienempi} kuin koira.', base: 'pieni', en: 'The cat is smaller than the dog.', tr: 'Kedi köpekten daha küçük.' },
+      { fi: 'Turku on {vanhempi} kuin Helsinki.', base: 'vanha', en: 'Turku is older than Helsinki.', tr: 'Turku, Helsinki\'den daha eski.' },
+      { fi: 'Lentolippu on {kalliimpi} kuin junalippu.', base: 'kallis', en: 'A plane ticket is more expensive than a train ticket.', tr: 'Uçak bileti tren biletinden daha pahalı.' },
+      { fi: 'Tämä tie on {lyhyempi} kuin se toinen.', base: 'lyhyt', en: 'This road is shorter than the other one.', tr: 'Bu yol öbüründen daha kısa.' },
+      { fi: 'Tämä tehtävä on {helpompi} kuin edellinen.', base: 'helppo', en: 'This exercise is easier than the previous one.', tr: 'Bu alıştırma bir öncekinden daha kolay.' }
     ]
   },
   {
@@ -890,7 +987,11 @@ export const GRAMMAR = [
       { fi: 'Mikä on Suomen {pisin} joki?', base: 'pitkä', en: 'What is the longest river in Finland?', tr: 'Finlandiya\'nın en uzun nehri hangisi?' },
       { fi: 'Hän on perheen {nuorin} lapsi.', base: 'nuori', en: 'He is the youngest child in the family.', tr: 'O, ailenin en küçük çocuğu.' },
       { fi: 'Tämä on {kaunein} paikka.', base: 'kaunis', en: 'This is the most beautiful place.', tr: 'Burası en güzel yer.' },
-      { fi: 'Ostan {halvimman} lipun.', base: 'halpa', en: 'I\'ll buy the cheapest ticket.', tr: 'En ucuz bileti alacağım.' }
+      { fi: 'Ostan {halvimman} lipun.', base: 'halpa', en: 'I\'ll buy the cheapest ticket.', tr: 'En ucuz bileti alacağım.' },
+      { fi: 'Tämä on kaupungin {korkein} rakennus.', base: 'korkea', en: 'This is the tallest building in the city.', tr: 'Bu, şehrin en yüksek binası.' },
+      { fi: 'Mikä on maailman {suurin} maa?', base: 'suuri', en: 'What is the largest country in the world?', tr: 'Dünyanın en büyük ülkesi hangisi?' },
+      { fi: 'Tammikuu on vuoden {kylmin} kuukausi.', base: 'kylmä', en: 'January is the coldest month of the year.', tr: 'Ocak, yılın en soğuk ayıdır.' },
+      { fi: 'Hän on joukkueen {nopein} pelaaja.', base: 'nopea', en: 'She is the fastest player on the team.', tr: 'Takımın en hızlı oyuncusu o.' }
     ]
   },
   {
@@ -924,7 +1025,11 @@ export const GRAMMAR = [
       { fi: 'Meidän {kotimme} on lähellä.', base: 'koti', en: 'Our home is near.', tr: 'Evimiz yakında.' },
       { fi: 'Onko tämä teidän {autonne}?', base: 'auto', en: 'Is this your car?', tr: 'Bu sizin arabanız mı?' },
       { fi: 'Hänen {äitinsä} on opettaja.', base: 'äiti', en: 'His mother is a teacher.', tr: 'Annesi öğretmen.' },
-      { fi: 'Olen {huoneessani}.', base: 'huone', en: 'I\'m in my room.', tr: 'Odamdayım.' }
+      { fi: 'Olen {huoneessani}.', base: 'huone', en: 'I\'m in my room.', tr: 'Odamdayım.' },
+      { fi: 'Onko tämä sinun {laukkusi}?', base: 'laukku', en: 'Is this your bag?', tr: 'Bu senin çantan mı?' },
+      { fi: 'Heidän {talonsa} on iso.', base: 'talo', en: 'Their house is big.', tr: 'Onların evi büyük.' },
+      { fi: 'Meidän {opettajamme} on mukava.', base: 'opettaja', en: 'Our teacher is nice.', tr: 'Öğretmenimiz çok iyi.' },
+      { fi: 'Soitan illalla {veljelleni}.', base: 'veli', en: 'I\'ll call my brother in the evening.', tr: 'Akşam kardeşimi arayacağım.' }
     ]
   },
   {
@@ -958,7 +1063,11 @@ export const GRAMMAR = [
       { fi: 'Älä {unohda} avaimia!', base: 'unohtaa', en: 'Don\'t forget the keys!', tr: 'Anahtarları unutma!' },
       { fi: 'Matti, {syö} lisää!', base: 'syödä', en: 'Matti, eat some more!', tr: 'Matti, biraz daha ye!' },
       { fi: 'Älkää {puhuko} niin kovaa.', base: 'puhua', en: 'Don\'t talk so loudly.', tr: 'O kadar yüksek sesle konuşmayın.' },
-      { fi: 'Pekka, {avaa} ikkuna, kiitos.', base: 'avata', en: 'Pekka, open the window, please.', tr: 'Pekka, pencereyi aç lütfen.' }
+      { fi: 'Pekka, {avaa} ikkuna, kiitos.', base: 'avata', en: 'Pekka, open the window, please.', tr: 'Pekka, pencereyi aç lütfen.' },
+      { fi: 'Liisa, {odota} hetki!', base: 'odottaa', en: 'Liisa, wait a moment!', tr: 'Liisa, bir dakika bekle!' },
+      { fi: 'Lapset, {tulkaa} syömään!', base: 'tulla', en: 'Children, come and eat!', tr: 'Çocuklar, yemeğe gelin!' },
+      { fi: 'Älä {mene} sinne!', base: 'mennä', en: 'Don\'t go there!', tr: 'Oraya gitme!' },
+      { fi: '{Kirjoittakaa} nimenne tähän, olkaa hyvä.', base: 'kirjoittaa', en: 'Please write your names here.', tr: 'Lütfen adlarınızı buraya yazın.' }
     ]
   },
   {
@@ -992,7 +1101,11 @@ export const GRAMMAR = [
       { fi: '{Meidän} pitää herätä aikaisin.', base: 'me', en: 'We have to get up early.', tr: 'Erken kalkmamız gerek.' },
       { fi: 'Sinun ei {tarvitse} maksaa.', base: 'tarvita', en: 'You don\'t have to pay.', tr: 'Ödemene gerek yok.' },
       { fi: '{Matin} täytyy tehdä läksyt.', base: 'Matti', en: 'Matti has to do his homework.', tr: 'Matti\'nin ödevlerini yapması lazım.' },
-      { fi: '{Hänen} täytyy ostaa uusi puhelin.', base: 'hän', en: 'She has to buy a new phone.', tr: 'Yeni bir telefon alması lazım.' }
+      { fi: '{Hänen} täytyy ostaa uusi puhelin.', base: 'hän', en: 'She has to buy a new phone.', tr: 'Yeni bir telefon alması lazım.' },
+      { fi: '{Teidän} täytyy odottaa.', base: 'te', en: 'You have to wait.', tr: 'Beklemeniz gerekiyor.' },
+      { fi: '{Heidän} pitää lähteä.', base: 'he', en: 'They have to leave.', tr: 'Gitmeleri lazım.' },
+      { fi: '{Lasten} täytyy mennä nukkumaan.', base: 'lapsi', en: 'The children have to go to bed.', tr: 'Çocukların yatmaya gitmesi gerekiyor.' },
+      { fi: '{Äidin} täytyy tehdä töitä huomenna.', base: 'äiti', en: 'Mum has to work tomorrow.', tr: 'Annemin yarın çalışması gerekiyor.' }
     ]
   },
   {
@@ -1026,7 +1139,11 @@ export const GRAMMAR = [
       { fi: '{Lapsena} asuin Turussa.', base: 'lapsi', en: 'As a child I lived in Turku.', tr: 'Çocukken Turku\'da yaşıyordum.' },
       { fi: 'Hän opiskelee {lääkäriksi}.', base: 'lääkäri', en: 'He is studying to become a doctor.', tr: 'Doktor olmak için okuyor.' },
       { fi: 'Tapaamme {maanantaina}.', base: 'maanantai', en: 'We\'ll meet on Monday.', tr: 'Pazartesi buluşuyoruz.' },
-      { fi: 'Sää muuttui {kylmäksi}.', base: 'kylmä', en: 'The weather turned cold.', tr: 'Hava soğudu.' }
+      { fi: 'Sää muuttui {kylmäksi}.', base: 'kylmä', en: 'The weather turned cold.', tr: 'Hava soğudu.' },
+      { fi: 'Hän työskentelee {kokkina}.', base: 'kokki', en: 'He works as a cook.', tr: 'Aşçı olarak çalışıyor.' },
+      { fi: 'Mitä tämä on {englanniksi}?', base: 'englanti', en: 'What is this in English?', tr: 'Bu İngilizcede ne demek?' },
+      { fi: 'Hän tuli {iloiseksi}.', base: 'iloinen', en: 'She became happy.', tr: 'Sevindi.' },
+      { fi: '{Nuorena} hän asui Ruotsissa.', base: 'nuori', en: 'As a young man he lived in Sweden.', tr: 'Gençken İsveç\'te yaşadı.' }
     ]
   },
   {
@@ -1060,7 +1177,11 @@ export const GRAMMAR = [
       { fi: '{Talvella} on kylmä.', base: 'talvi', en: 'It\'s cold in winter.', tr: 'Kışın hava soğuk.' },
       { fi: 'Nähdään {illalla}!', base: 'ilta', en: 'See you in the evening!', tr: 'Akşam görüşürüz!' },
       { fi: 'Asuin Suomessa kaksi {vuotta}.', base: 'vuosi', en: 'I lived in Finland for two years.', tr: 'İki yıl Finlandiya\'da yaşadım.' },
-      { fi: 'Juna lähtee {kahdelta}.', base: 'kaksi', en: 'The train leaves at two.', tr: 'Tren saat ikide kalkıyor.' }
+      { fi: 'Juna lähtee {kahdelta}.', base: 'kaksi', en: 'The train leaves at two.', tr: 'Tren saat ikide kalkıyor.' },
+      { fi: 'Lähden lomalle {heinäkuussa}.', base: 'heinäkuu', en: 'I\'m going on holiday in July.', tr: 'Temmuzda tatile çıkıyorum.' },
+      { fi: '{Keväällä} kukat kukkivat.', base: 'kevät', en: 'In spring the flowers bloom.', tr: 'İlkbaharda çiçekler açar.' },
+      { fi: 'Herään {aamulla} aikaisin.', base: 'aamu', en: 'I wake up early in the morning.', tr: 'Sabah erken uyanırım.' },
+      { fi: 'Nähdään ensi {viikolla}!', base: 'viikko', en: 'See you next week!', tr: 'Gelecek hafta görüşürüz!' }
     ]
   },
 
@@ -1096,7 +1217,11 @@ export const GRAMMAR = [
       { fi: 'Minä {luen} kirjaa.', base: 'lukea', en: 'I\'m reading a book.', tr: 'Kitap okuyorum.' },
       { fi: 'Hän {tapaa} ystävänsä illalla.', base: 'tavata', en: 'She meets her friend in the evening.', tr: 'Akşam arkadaşıyla buluşuyor.' },
       { fi: 'Tämä on {tytön} pyörä.', base: 'tyttö', en: 'This is the girl\'s bike.', tr: 'Bu kızın bisikleti.' },
-      { fi: 'Odotan sinua {kaupan} edessä.', base: 'kauppa', en: 'I\'ll wait for you in front of the shop.', tr: 'Seni marketin önünde bekliyorum.' }
+      { fi: 'Odotan sinua {kaupan} edessä.', base: 'kauppa', en: 'I\'ll wait for you in front of the shop.', tr: 'Seni marketin önünde bekliyorum.' },
+      { fi: 'Hän istuu {pöydän} ääressä.', base: 'pöytä', en: 'He is sitting at the table.', tr: 'Masada oturuyor.' },
+      { fi: 'Me {otamme} taksin.', base: 'ottaa', en: 'We\'ll take a taxi.', tr: 'Taksiye bineceğiz.' },
+      { fi: '{Kengässä} on reikä.', base: 'kenkä', en: 'There is a hole in the shoe.', tr: 'Ayakkabıda bir delik var.' },
+      { fi: 'Minä {pelkään} koiria.', base: 'pelätä', en: 'I\'m afraid of dogs.', tr: 'Köpeklerden korkarım.' }
     ]
   },
   {
@@ -1130,7 +1255,11 @@ export const GRAMMAR = [
       { fi: 'Jos minulla {olisi} rahaa, ostaisin talon.', base: 'olla', en: 'If I had money, I would buy a house.', tr: 'Param olsa bir ev alırdım.' },
       { fi: 'Mitä sinä {tekisit}?', base: 'tehdä', en: 'What would you do?', tr: 'Sen ne yapardın?' },
       { fi: 'Me {matkustaisimme} Japaniin.', base: 'matkustaa', en: 'We would travel to Japan.', tr: 'Japonya\'ya giderdik.' },
-      { fi: 'Hän {söisi} mielellään jäätelöä.', base: 'syödä', en: 'She would gladly eat ice cream.', tr: 'Seve seve dondurma yerdi.' }
+      { fi: 'Hän {söisi} mielellään jäätelöä.', base: 'syödä', en: 'She would gladly eat ice cream.', tr: 'Seve seve dondurma yerdi.' },
+      { fi: 'Minä {menisin} kotiin, jos voisin.', base: 'mennä', en: 'I would go home if I could.', tr: 'Yapabilsem eve giderdim.' },
+      { fi: 'Olisi kiva, jos {tulisit}.', base: 'tulla', en: 'It would be nice if you came.', tr: 'Gelsen çok güzel olurdu.' },
+      { fi: 'Jos heillä olisi rahaa, he {ostaisivat} uuden auton.', base: 'ostaa', en: 'If they had money, they would buy a new car.', tr: 'Paraları olsa yeni bir araba alırlardı.' },
+      { fi: 'Jos olisin sinä, en {tekisi} niin.', base: 'tehdä', en: 'If I were you, I wouldn\'t do that.', tr: 'Senin yerinde olsam öyle yapmazdım.' }
     ]
   },
   {
@@ -1164,7 +1293,11 @@ export const GRAMMAR = [
       { fi: 'Hän olisi {voittanut}.', base: 'voittaa', en: 'He would have won.', tr: 'Kazanırdı.' },
       { fi: 'Jos olisit {soittanut}, olisin auttanut.', base: 'soittaa', en: 'If you had called, I would have helped.', tr: 'Arasaydın yardım ederdim.' },
       { fi: 'He {olisivat} lähteneet aikaisemmin.', base: 'olla', en: 'They would have left earlier.', tr: 'Daha erken çıkarlardı.' },
-      { fi: 'En olisi {uskonut}!', base: 'uskoa', en: 'I wouldn\'t have believed it!', tr: 'İnanmazdım!' }
+      { fi: 'En olisi {uskonut}!', base: 'uskoa', en: 'I wouldn\'t have believed it!', tr: 'İnanmazdım!' },
+      { fi: 'Jos olisin herännyt ajoissa, en olisi {myöhästynyt}.', base: 'myöhästyä', en: 'If I had woken up on time, I wouldn\'t have been late.', tr: 'Zamanında uyansaydım geç kalmazdım.' },
+      { fi: 'Olisimme {tulleet}, mutta auto hajosi.', base: 'tulla', en: 'We would have come, but the car broke down.', tr: 'Gelirdik ama araba bozuldu.' },
+      { fi: 'Jos sinä {olisit} tullut, olisit nähnyt hänet.', base: 'olla', en: 'If you had come, you would have seen him.', tr: 'Gelseydin onu görürdün.' },
+      { fi: 'Hän ei olisi {tehnyt} niin.', base: 'tehdä', en: 'She wouldn\'t have done that.', tr: 'O öyle yapmazdı.' }
     ]
   },
   {
@@ -1198,7 +1331,11 @@ export const GRAMMAR = [
       { fi: '{Mennään} kahville!', base: 'mennä', en: 'Let\'s go for a coffee!', tr: 'Hadi kahve içmeye gidelim!' },
       { fi: 'Kirjasto {avataan} kymmeneltä.', base: 'avata', en: 'The library opens at ten.', tr: 'Kütüphane saat onda açılır.' },
       { fi: 'Täällä ei {polteta}.', base: 'polttaa', en: 'No smoking here.', tr: 'Burada sigara içilmez.' },
-      { fi: 'Mitä tänään {tehdään}?', base: 'tehdä', en: 'What shall we do today?', tr: 'Bugün ne yapıyoruz?' }
+      { fi: 'Mitä tänään {tehdään}?', base: 'tehdä', en: 'What shall we do today?', tr: 'Bugün ne yapıyoruz?' },
+      { fi: 'Suomessa {juodaan} paljon kahvia.', base: 'juoda', en: 'People drink a lot of coffee in Finland.', tr: 'Finlandiya\'da çok kahve içilir.' },
+      { fi: 'Koulussa {opitaan} uusia asioita.', base: 'oppia', en: 'At school you learn new things.', tr: 'Okulda yeni şeyler öğrenilir.' },
+      { fi: '{Syödään} yhdessä!', base: 'syödä', en: 'Let\'s eat together!', tr: 'Hadi birlikte yiyelim!' },
+      { fi: 'Kirjastossa ei {puhuta} kovalla äänellä.', base: 'puhua', en: 'You don\'t talk loudly in the library.', tr: 'Kütüphanede yüksek sesle konuşulmaz.' }
     ]
   },
   {
@@ -1232,7 +1369,11 @@ export const GRAMMAR = [
       { fi: 'Ovi {avattiin} kello yhdeksän.', base: 'avata', en: 'The door was opened at nine.', tr: 'Kapı saat dokuzda açıldı.' },
       { fi: 'Kokouksessa ei {päätetty} mitään.', base: 'päättää', en: 'Nothing was decided at the meeting.', tr: 'Toplantıda hiçbir karar alınmadı.' },
       { fi: 'Ennen {asuttiin} maalla.', base: 'asua', en: 'In the old days people lived in the countryside.', tr: 'Eskiden kırsalda yaşanırdı.' },
-      { fi: 'Ikkuna {rikottiin} eilen.', base: 'rikkoa', en: 'The window was broken yesterday.', tr: 'Pencere dün kırıldı.' }
+      { fi: 'Ikkuna {rikottiin} eilen.', base: 'rikkoa', en: 'The window was broken yesterday.', tr: 'Pencere dün kırıldı.' },
+      { fi: 'Kirje {lähetettiin} eilen.', base: 'lähettää', en: 'The letter was sent yesterday.', tr: 'Mektup dün gönderildi.' },
+      { fi: 'Eilen {syötiin} kakkua.', base: 'syödä', en: 'Yesterday we had cake.', tr: 'Dün pasta yendi.' },
+      { fi: 'Torilla {myytiin} mansikoita.', base: 'myydä', en: 'Strawberries were sold at the market.', tr: 'Pazarda çilek satıldı.' },
+      { fi: 'Asiasta ei {puhuttu} kokouksessa.', base: 'puhua', en: 'The matter wasn\'t discussed at the meeting.', tr: 'Toplantıda bu konudan bahsedilmedi.' }
     ]
   },
   {
@@ -1266,7 +1407,11 @@ export const GRAMMAR = [
       { fi: 'Emme ole {nähneet} sitä elokuvaa.', base: 'nähdä', en: 'We haven\'t seen that film.', tr: 'O filmi görmedik.' },
       { fi: 'Hän {on} jo lähtenyt.', base: 'olla', en: 'She has already left.', tr: 'O çoktan gitti.' },
       { fi: 'He ovat {oppineet} paljon.', base: 'oppia', en: 'They have learned a lot.', tr: 'Çok şey öğrendiler.' },
-      { fi: 'En ole koskaan {syönyt} poronlihaa.', base: 'syödä', en: 'I have never eaten reindeer meat.', tr: 'Hiç ren geyiği eti yemedim.' }
+      { fi: 'En ole koskaan {syönyt} poronlihaa.', base: 'syödä', en: 'I have never eaten reindeer meat.', tr: 'Hiç ren geyiği eti yemedim.' },
+      { fi: 'Oletko {lukenut} tämän kirjan?', base: 'lukea', en: 'Have you read this book?', tr: 'Bu kitabı okudun mu?' },
+      { fi: 'Olen {ollut} Suomessa kaksi vuotta.', base: 'olla', en: 'I have been in Finland for two years.', tr: 'İki yıldır Finlandiya\'dayım.' },
+      { fi: 'Me {olemme} jo syöneet.', base: 'olla', en: 'We have already eaten.', tr: 'Biz çoktan yedik.' },
+      { fi: 'Hän ei ole vielä {tullut}.', base: 'tulla', en: 'He hasn\'t come yet.', tr: 'Henüz gelmedi.' }
     ]
   },
   {
@@ -1300,7 +1445,11 @@ export const GRAMMAR = [
       { fi: 'Hän {oli} unohtanut avaimensa.', base: 'olla', en: 'She had forgotten her keys.', tr: 'Anahtarlarını unutmuştu.' },
       { fi: 'En ollut koskaan {nähnyt} lunta.', base: 'nähdä', en: 'I had never seen snow.', tr: 'Hiç kar görmemiştim.' },
       { fi: 'He olivat {asuneet} Oulussa ennen muuttoa.', base: 'asua', en: 'They had lived in Oulu before the move.', tr: 'Taşınmadan önce Oulu\'da yaşamışlardı.' },
-      { fi: 'Olin juuri {herännyt}, kun puhelin soi.', base: 'herätä', en: 'I had just woken up when the phone rang.', tr: 'Telefon çaldığında daha yeni uyanmıştım.' }
+      { fi: 'Olin juuri {herännyt}, kun puhelin soi.', base: 'herätä', en: 'I had just woken up when the phone rang.', tr: 'Telefon çaldığında daha yeni uyanmıştım.' },
+      { fi: 'Hän oli jo {mennyt} nukkumaan, kun soitin.', base: 'mennä', en: 'He had already gone to bed when I called.', tr: 'Aradığımda çoktan yatmıştı.' },
+      { fi: 'Me {olimme} jo syöneet, kun vieraat tulivat.', base: 'olla', en: 'We had already eaten when the guests arrived.', tr: 'Misafirler geldiğinde biz çoktan yemiştik.' },
+      { fi: 'Olin {unohtanut} lompakkoni kotiin.', base: 'unohtaa', en: 'I had left my wallet at home.', tr: 'Cüzdanımı evde unutmuştum.' },
+      { fi: 'En ollut koskaan ennen {käynyt} Lapissa.', base: 'käydä', en: 'I had never been to Lapland before.', tr: 'Daha önce hiç Laponya\'ya gitmemiştim.' }
     ]
   },
   {
@@ -1334,7 +1483,11 @@ export const GRAMMAR = [
       { fi: 'Kirja, {jonka} ostin, on hyvä.', base: 'joka', en: 'The book I bought is good.', tr: 'Aldığım kitap güzel.' },
       { fi: 'Ystävät, {jotka} tulivat, olivat iloisia.', base: 'joka', en: 'The friends who came were happy.', tr: 'Gelen arkadaşlar mutluydu.' },
       { fi: 'Tämä on kaupunki, {josta} pidän eniten.', base: 'joka', en: 'This is the city I like the most.', tr: 'En sevdiğim şehir bu.' },
-      { fi: 'Kaikki, {mitä} hän sanoi, oli totta.', base: 'mikä', en: 'Everything he said was true.', tr: 'Söylediği her şey doğruydu.' }
+      { fi: 'Ei kaikki ole kultaa, {mikä} kiiltää.', base: 'mikä', en: 'All that glitters is not gold.', tr: 'Her parlayan altın değildir.' },
+      { fi: 'Nainen, {jota} odotan, on myöhässä.', base: 'joka', en: 'The woman I\'m waiting for is late.', tr: 'Beklediğim kadın geç kaldı.' },
+      { fi: 'Lapset, {joiden} kanssa leikin, asuvat naapurissa.', base: 'joka', en: 'The children I play with live next door.', tr: 'Birlikte oynadığım çocuklar yan evde oturuyor.' },
+      { fi: 'Kaupunki, {johon} muutimme, on pieni.', base: 'joka', en: 'The town we moved to is small.', tr: 'Taşındığımız şehir küçük.' },
+      { fi: 'Ystävä, {jolle} soitin, ei vastannut.', base: 'joka', en: 'The friend I called didn\'t answer.', tr: 'Aradığım arkadaş cevap vermedi.' }
     ]
   },
   {
@@ -1368,7 +1521,11 @@ export const GRAMMAR = [
       { fi: 'Minulla on paljon {luettavaa}.', base: 'lukea', en: 'I have a lot to read.', tr: 'Okuyacak çok şeyim var.' },
       { fi: 'Hän on hyvin {väsynyt}.', base: 'väsyä', en: 'She is very tired.', tr: 'Çok yorgun.' },
       { fi: '{Puhuva} papukaija on hauska.', base: 'puhua', en: 'A talking parrot is fun.', tr: 'Konuşan papağan eğlencelidir.' },
-      { fi: 'Älä herätä {nukkuvaa} lasta.', base: 'nukkua', en: 'Don\'t wake the sleeping child.', tr: 'Uyuyan çocuğu uyandırma.' }
+      { fi: 'Älä herätä {nukkuvaa} lasta.', base: 'nukkua', en: 'Don\'t wake the sleeping child.', tr: 'Uyuyan çocuğu uyandırma.' },
+      { fi: 'Ostin {käytetyn} auton.', base: 'käyttää', en: 'I bought a used car.', tr: 'İkinci el bir araba aldım.' },
+      { fi: '{Itkevä} lapsi etsii äitiään.', base: 'itkeä', en: 'The crying child is looking for his mother.', tr: 'Ağlayan çocuk annesini arıyor.' },
+      { fi: 'Minulla on paljon {tehtävää}.', base: 'tehdä', en: 'I have a lot to do.', tr: 'Yapacak çok işim var.' },
+      { fi: 'Tämä on isän {rakentama} talo.', base: 'rakentaa', en: 'This is the house Dad built.', tr: 'Bu, babamın yaptığı ev.' }
     ]
   },
   {
@@ -1402,7 +1559,11 @@ export const GRAMMAR = [
       { fi: 'Hän tuli {kävelemästä}.', base: 'kävellä', en: 'She came back from a walk.', tr: 'Yürüyüşten döndü.' },
       { fi: 'Lähdin {syömättä} aamupalaa.', base: 'syödä', en: 'I left without eating breakfast.', tr: 'Kahvaltı etmeden çıktım.' },
       { fi: 'Opin {ajamaan} autoa.', base: 'ajaa', en: 'I learned to drive a car.', tr: 'Araba kullanmayı öğrendim.' },
-      { fi: 'Tule {katsomaan}!', base: 'katsoa', en: 'Come and see!', tr: 'Gel de bak!' }
+      { fi: 'Tule {katsomaan}!', base: 'katsoa', en: 'Come and see!', tr: 'Gel de bak!' },
+      { fi: 'Lähden {ostamaan} leipää.', base: 'ostaa', en: 'I\'m off to buy bread.', tr: 'Ekmek almaya gidiyorum.' },
+      { fi: 'Hän on {nukkumassa}.', base: 'nukkua', en: 'He is sleeping.', tr: 'Uyuyor.' },
+      { fi: 'Tulen juuri {uimasta}.', base: 'uida', en: 'I\'ve just come from swimming.', tr: 'Yüzmeden yeni geliyorum.' },
+      { fi: 'Hän lähti {sanomatta} mitään.', base: 'sanoa', en: 'She left without saying anything.', tr: 'Hiçbir şey söylemeden gitti.' }
     ]
   },
   {
@@ -1435,7 +1596,12 @@ export const GRAMMAR = [
       { fi: 'Juna {tullee} pian.', base: 'tulla', en: 'The train will probably come soon.', tr: 'Tren muhtemelen birazdan gelir.' },
       { fi: 'Hinta {noussee} ensi vuonna.', base: 'nousta', en: 'The price will probably rise next year.', tr: 'Fiyat gelecek yıl muhtemelen artacak.' },
       { fi: 'Kokous {kestänee} tunnin.', base: 'kestää', en: 'The meeting will probably last an hour.', tr: 'Toplantı muhtemelen bir saat sürer.' },
-      { fi: 'Hän {saanee} paikan.', base: 'saada', en: 'She will probably get the job.', tr: 'İşi muhtemelen o alacak.' }
+      { fi: 'Hän {saanee} paikan.', base: 'saada', en: 'She will probably get the job.', tr: 'İşi muhtemelen o alacak.' },
+      { fi: 'Sinä {tiennet} vastauksen.', base: 'tietää', en: 'You probably know the answer.', tr: 'Cevabı muhtemelen biliyorsundur.' },
+      { fi: 'He {tullevat} myöhemmin.', base: 'tulla', en: 'They will probably come later.', tr: 'Muhtemelen daha sonra gelirler.' },
+      { fi: 'Huomenna {satanee}.', base: 'sataa', en: 'It will probably rain tomorrow.', tr: 'Yarın muhtemelen yağmur yağacak.' },
+      { fi: 'Me {lienemme} ajoissa.', base: 'olla', en: 'We will probably be on time.', tr: 'Muhtemelen zamanında oluruz.' },
+      { fi: 'Kauppa {avannee} kymmeneltä.', base: 'avata', en: 'The shop probably opens at ten.', tr: 'Mağaza muhtemelen saat onda açılır.' }
     ]
   },
   {
@@ -1469,7 +1635,341 @@ export const GRAMMAR = [
       { fi: 'Juokse {nopeammin}!', base: 'nopea', en: 'Run faster!', tr: 'Daha hızlı koş!' },
       { fi: 'Lapsi hymyili {iloisesti}.', base: 'iloinen', en: 'The child smiled happily.', tr: 'Çocuk neşeyle gülümsedi.' },
       { fi: 'Tule {tänne}!', base: 'täällä', en: 'Come here!', tr: 'Buraya gel!' },
-      { fi: 'Puhu {selvästi}, kiitos.', base: 'selvä', en: 'Speak clearly, please.', tr: 'Lütfen açık konuş.' }
+      { fi: 'Puhu {selvästi}, kiitos.', base: 'selvä', en: 'Speak clearly, please.', tr: 'Lütfen açık konuş.' },
+      { fi: 'Hän laulaa {kauniisti}.', base: 'kaunis', en: 'She sings beautifully.', tr: 'Güzel şarkı söylüyor.' },
+      { fi: 'Nukuin {huonosti}.', base: 'huono', en: 'I slept badly.', tr: 'Kötü uyudum.' },
+      { fi: 'Menen {sinne} huomenna.', base: 'siellä', en: 'I\'m going there tomorrow.', tr: 'Yarın oraya gidiyorum.' },
+      { fi: 'Hän tuli {kotiin} myöhään.', base: 'koti', en: 'He came home late.', tr: 'Eve geç geldi.' }
+    ]
+  },
+
+  // ───────────────────────── More lessons ─────────────────────────
+  {
+    id: 'question-words', lv: 1, icon: 'search',
+    title: { en: 'Question words', tr: 'Soru kelimeleri' },
+    summary: { en: 'mikä, kuka, missä, mistä, mihin, milloin, miksi, miten…', tr: 'mikä, kuka, missä, mistä, mihin, milloin, miksi, miten…' },
+    body: {
+      en: [
+        'A question word goes first and the rest of the sentence keeps normal word order: **Missä** sinä asut? = Where do you live? When there is a question word, you don\'t add -ko/-kö.',
+        'The "where" family follows the three location cases: **missä** (where), **mistä** (where from), **mihin** (where to). Answer in the same case: *Missä?* – *Helsingissä*. *Mistä?* – *Helsingistä*. *Mihin?* – *Helsinkiin*.',
+        '**mikä** = what / which (things) and **kuka** = who (people) take case endings too: *Mitä* sinä teet? (what – partitive), *Kenen* laukku? (whose), *Kenelle* soitat? (who… to).',
+        'Others: **milloin** (when), **miksi** (why – answer with *koska*, because), **miten** or **kuinka** (how), **paljonko** (how much), **kuinka monta** (how many, followed by the partitive singular).'
+      ],
+      tr: [
+        'Soru kelimesi başa gelir, cümlenin geri kalanı normal sırada kalır: **Missä** sinä asut? = Nerede oturuyorsun? Soru kelimesi varsa -ko/-kö eklenmez; Türkçede de soru kelimesiyle birlikte *mı* kullanmadığımız gibi.',
+        '"Nerede" ailesi üç yer hâlini izler: **missä** (nerede), **mistä** (nereden), **mihin** (nereye). Cevap da aynı hâlde gelir: *Missä?* – *Helsingissä*. *Mistä?* – *Helsingistä*. *Mihin?* – *Helsinkiin*. Türkçedeki *-de / -den / -e* üçlüsünün tıpatıp aynısı!',
+        '**mikä** = ne / hangi (şeyler için) ve **kuka** = kim (insanlar için) de hâl eki alır: *Mitä* sinä teet? (Ne yapıyorsun? – partitif), *Kenen* laukku? (Kimin çantası?), *Kenelle* soitat? (Kimi arıyorsun? – kelimesi kelimesine "kime").',
+        'Diğerleri: **milloin** (ne zaman), **miksi** (neden – cevap *koska*, çünkü), **miten** ya da **kuinka** (nasıl), **paljonko** (ne kadar), **kuinka monta** (kaç tane; arkasından tekil partitif gelir).'
+      ]
+    },
+    table: {
+      head: { en: ['Question', 'Answer'], tr: ['Soru', 'Cevap'] },
+      rows: [['Missä asut?', 'Helsingissä.'], ['Mistä tulet?', 'Turkista.'], ['Mihin menet?', 'Kauppaan.'], ['Kuka hän on?', 'Opettaja.'], ['Mitä teet?', 'Luen.'], ['Milloin tulet?', 'Huomenna.'], ['Miksi?', 'Koska olen väsynyt.'], ['Paljonko se maksaa?', 'Viisi euroa.']]
+    },
+    examples: [
+      ['Mikä sinun nimesi on?', 'What is your name?', 'Adın ne?'],
+      ['Mistä sinä olet kotoisin?', 'Where are you from?', 'Nerelisin?'],
+      ['Miten menee?', 'How are things?', 'Nasıl gidiyor?'],
+      ['Paljonko tämä maksaa?', 'How much does this cost?', 'Bu ne kadar?']
+    ],
+    quiz: [
+      { fi: '{Missä} sinä asut? – Tampereella.', base: 'missä / mistä / mihin', en: 'Where do you live? – In Tampere.', tr: 'Nerede oturuyorsun? – Tampere\'de.' },
+      { fi: '{Mistä} sinä tulet? – Kaupasta.', base: 'missä / mistä / mihin', en: 'Where are you coming from? – From the shop.', tr: 'Nereden geliyorsun? – Marketten.' },
+      { fi: '{Mihin} te menette? – Elokuviin.', base: 'missä / mistä / mihin', en: 'Where are you going? – To the cinema.', tr: 'Nereye gidiyorsunuz? – Sinemaya.' },
+      { fi: '{Kenen} laukku tämä on? – Annan.', base: 'kuka', en: 'Whose bag is this? – Anna\'s.', tr: 'Bu kimin çantası? – Anna\'nın.' },
+      { fi: '{Mitä} sinä teet? – Luen kirjaa.', base: 'mikä', en: 'What are you doing? – I\'m reading a book.', tr: 'Ne yapıyorsun? – Kitap okuyorum.' },
+      { fi: '{Kenelle} soitat? – Äidille.', base: 'kuka', en: 'Who are you calling? – Mum.', tr: 'Kimi arıyorsun? – Annemi.' },
+      { fi: '{Milloin} juna lähtee? – Kello kahdeksan.', base: 'milloin', en: 'When does the train leave? – At eight.', tr: 'Tren ne zaman kalkıyor? – Saat sekizde.' },
+      { fi: '{Miksi} olet myöhässä? – Koska bussi oli myöhässä.', base: 'miksi', en: 'Why are you late? – Because the bus was late.', tr: 'Neden geç kaldın? – Çünkü otobüs gecikti.' },
+      { fi: 'Kuinka {paljon} kahvi maksaa? – Kolme euroa.', base: 'paljon', en: 'How much is the coffee? – Three euros.', tr: 'Kahve ne kadar? – Üç avro.' },
+      { fi: '{Mikä} tämä on? – Se on sanakirja.', base: 'mikä', en: 'What is this? – It\'s a dictionary.', tr: 'Bu ne? – Sözlük.' }
+    ]
+  },
+  {
+    id: 'days-months-clock', lv: 1, icon: 'calendar',
+    title: { en: 'Days, months and the clock', tr: 'Günler, aylar ve saat' },
+    summary: { en: 'maanantai, tammikuu, kello on viisi, puoli kuusi.', tr: 'maanantai, tammikuu, kello on viisi, puoli kuusi.' },
+    body: {
+      en: [
+        'Days and months are written with a **small letter**. Days: *maanantai, tiistai, keskiviikko, torstai, perjantai, lauantai, sunnuntai*. "On Monday" = **maanantaina**.',
+        'All months end in **-kuu** ("moon"): *tammikuu, helmikuu, maaliskuu, huhtikuu, toukokuu, kesäkuu, heinäkuu, elokuu, syyskuu, lokakuu, marraskuu, joulukuu*. "In May" = **toukokuussa**.',
+        'Telling the time: *Paljonko kello on?* or *Mitä kello on?* – **Kello on viisi** (It\'s five). Half hours look **forward** to the next hour: **puoli kuusi** is literally "half six", but it means **5.30** (half of the way to six). Careful: British "half six" means 6.30! Quarters: **varttia yli** viisi (5.15), **varttia vaille** kuusi (5.45). Minutes work the same way: *kymmenen yli kaksi* (2.10), *viittä vaille kolme* (2.55).',
+        '"At five" is **kello viisi** or **viideltä**. Timetables use the 24-hour clock: *kello 17.30* = *seitsemäntoista kolmekymmentä*.'
+      ],
+      tr: [
+        'Günler ve aylar **küçük harfle** yazılır. Günler: *maanantai* (pazartesi), *tiistai* (salı), *keskiviikko* (çarşamba, "hafta ortası"), *torstai* (perşembe), *perjantai* (cuma), *lauantai* (cumartesi), *sunnuntai* (pazar). "Pazartesi günü" = **maanantaina**.',
+        'Ayların hepsi **-kuu** ("ay") ile biter: *tammikuu* (ocak), *helmikuu* (şubat), *maaliskuu* (mart), *huhtikuu* (nisan), *toukokuu* (mayıs), *kesäkuu* (haziran), *heinäkuu* (temmuz), *elokuu* (ağustos), *syyskuu* (eylül), *lokakuu* (ekim), *marraskuu* (kasım), *joulukuu* (aralık). "Mayısta" = **toukokuussa**.',
+        'Saat sormak: *Paljonko kello on?* ya da *Mitä kello on?* (Saat kaç?) – **Kello on viisi** (Saat beş). Buçuklar **ileriye** bakar: **puoli kuusi** kelimesi kelimesine "yarım altı", yani altıya doğru yarım saat: **5.30** (beş buçuk)! Çeyrekler: **varttia yli** viisi (beşi çeyrek geçiyor), **varttia vaille** kuusi (altıya çeyrek var). Dakikalar da aynı mantıkla: *kymmenen yli kaksi* (ikiyi on geçiyor), *viittä vaille kolme* (üçe beş var). Türkçedeki *geçiyor / var* ile birebir.',
+        '"Saat beşte" = **kello viisi** ya da **viideltä**. Tarifelerde 24 saat sistemi kullanılır: *kello 17.30* = *seitsemäntoista kolmekymmentä*.'
+      ]
+    },
+    table: {
+      head: { en: ['Time', 'In Finnish'], tr: ['Saat', 'Fincesi'] },
+      rows: [['5.00', 'kello on viisi'], ['5.15', 'varttia yli viisi'], ['5.30', 'puoli kuusi'], ['5.45', 'varttia vaille kuusi'], ['2.10', 'kymmenen yli kaksi'], ['2.55', 'viittä vaille kolme']]
+    },
+    examples: [
+      ['Mitä kello on? – Se on puoli kahdeksan.', 'What time is it? – It\'s half past seven.', 'Saat kaç? – Yedi buçuk.'],
+      ['Kauppa on auki maanantaista perjantaihin.', 'The shop is open from Monday to Friday.', 'Mağaza pazartesiden cumaya açık.'],
+      ['Joulu on joulukuussa.', 'Christmas is in December.', 'Noel aralıkta.'],
+      ['Tavataan lauantaina kello kaksi.', 'Let\'s meet on Saturday at two.', 'Cumartesi saat ikide buluşalım.']
+    ],
+    quiz: [
+      { fi: 'Kello on puoli {seitsemän}.', base: '6.30', en: 'It\'s half past six.', tr: 'Saat altı buçuk.' },
+      { fi: 'Kello on varttia vaille {neljä}.', base: '3.45', en: 'It\'s a quarter to four.', tr: 'Saat dörde çeyrek var.' },
+      { fi: 'Elokuva alkaa kello {yhdeksän}.', base: '9', en: 'The film starts at nine.', tr: 'Film saat dokuzda başlıyor.' },
+      { fi: 'Tapaamme {keskiviikkona}.', base: 'keskiviikko', en: 'We\'ll meet on Wednesday.', tr: 'Çarşamba günü buluşuyoruz.' },
+      { fi: 'Kesäloma alkaa {kesäkuussa}.', base: 'kesäkuu', en: 'The summer holiday starts in June.', tr: 'Yaz tatili haziranda başlıyor.' },
+      { fi: 'Lunta sataa usein {tammikuussa}.', base: 'tammikuu', en: 'It often snows in January.', tr: 'Ocakta sık sık kar yağar.' },
+      { fi: 'Kauppa on kiinni {sunnuntaina}.', base: 'sunnuntai', en: 'The shop is closed on Sunday.', tr: 'Mağaza pazar günü kapalı.' },
+      { fi: 'Herään joka aamu {seitsemältä}.', base: 'seitsemän', en: 'I wake up at seven every morning.', tr: 'Her sabah yedide uyanırım.' },
+      { fi: 'Kello on viittä vaille {kaksi}.', base: '1.55', en: 'It\'s five to two.', tr: 'Saat ikiye beş var.' },
+      { fi: 'Koulu alkaa {elokuussa}.', base: 'elokuu', en: 'School starts in August.', tr: 'Okul ağustosta başlıyor.' }
+    ]
+  },
+  {
+    id: 'adjective-agreement', lv: 1, icon: 'swatch-book',
+    title: { en: 'Adjectives agree', tr: 'Sıfat uyumu' },
+    summary: { en: 'isossa talossa, punaisia omenoita.', tr: 'isossa talossa, punaisia omenoita.' },
+    body: {
+      en: [
+        'In Finnish an adjective in front of a noun takes the **same case and number** as the noun: *iso talo* → **isossa talossa** (in a big house), **isoon taloon** (into a big house), **isot talot** (the big houses).',
+        'In English the adjective never changes. In Finnish it works like an echo: whatever ending the noun gets, the adjective repeats it: *punainen omena* → **punaisia omenoita** (red apples, partitive plural).',
+        'Adjectives have stems just like nouns: *pieni* → *pienessä*, *uusi* → *uudessa*, *punainen* → *punaisessa*, *kaunis* → *kauniissa*. Learn the stem once and every ending works.',
+        'Demonstratives agree too: **tässä** *pienessä kylässä* (in this small village). But after *olla* the adjective is not an echo: *Talo on iso* (The house is big).'
+      ],
+      tr: [
+        'Fincede ismin önündeki sıfat, isimle **aynı hâli ve sayıyı** alır: *iso talo* (büyük ev) → **isossa talossa** (büyük evde), **isoon taloon** (büyük eve), **isot talot** (büyük evler).',
+        'Türkçeden en büyük fark bu: Türkçede *büyük evde* deriz, sıfat hiç değişmez. Fincede sıfat, ismin ekini yankı gibi tekrarlar; sanki "büyükte evde" diyormuşuz gibi: *punainen omena* (kırmızı elma) → **punaisia omenoita** (kırmızı elmalar, çoğul partitif).',
+        'Sıfatların da isimler gibi gövdeleri vardır: *pieni* → *pienessä*, *uusi* → *uudessa*, *punainen* → *punaisessa*, *kaunis* → *kauniissa*. Gövdeyi bir kez öğren, bütün ekler onunla çalışır.',
+        'İşaret sıfatları da uyar: **tässä** *pienessä kylässä* (bu küçük köyde). Ama *olla* fiilinden sonra sıfat yüklemdir, ismin ekini tekrarlamaz: *Talo on iso* (Ev büyük).'
+      ]
+    },
+    table: {
+      head: { en: ['Basic form', 'With an ending'], tr: ['Temel hâl', 'Ekli hâl'] },
+      rows: [['iso talo', 'isossa talossa'], ['pieni kylä', 'pienessä kylässä'], ['uusi auto', 'uudella autolla'], ['punainen omena', 'punaisia omenoita'], ['kaunis kukka', 'kauniita kukkia'], ['vanha mies', 'vanhalle miehelle']]
+    },
+    examples: [
+      ['Asun isossa talossa.', 'I live in a big house.', 'Büyük bir evde oturuyorum.'],
+      ['Ostin punaisia omenoita.', 'I bought some red apples.', 'Kırmızı elma aldım.'],
+      ['Hän ajaa uudella autolla.', 'He drives a new car.', 'Yeni bir araba kullanıyor.'],
+      ['Pidän kylmästä vedestä.', 'I like cold water.', 'Soğuk suyu severim.']
+    ],
+    quiz: [
+      { fi: 'Asumme {pienessä} kylässä.', base: 'pieni', en: 'We live in a small village.', tr: 'Küçük bir köyde yaşıyoruz.' },
+      { fi: 'Pöydällä on {punaisia} kukkia.', base: 'punainen', en: 'There are red flowers on the table.', tr: 'Masada kırmızı çiçekler var.' },
+      { fi: 'Menen {uuteen} kauppaan.', base: 'uusi', en: 'I\'m going to the new shop.', tr: 'Yeni markete gidiyorum.' },
+      { fi: 'Hän asuu {vanhassa} talossa.', base: 'vanha', en: 'She lives in an old house.', tr: 'Eski bir evde oturuyor.' },
+      { fi: 'Juon {kylmää} vettä.', base: 'kylmä', en: 'I\'m drinking cold water.', tr: 'Soğuk su içiyorum.' },
+      { fi: 'Annan kirjan {nuorelle} pojalle.', base: 'nuori', en: 'I give the book to the young boy.', tr: 'Kitabı genç oğlana veriyorum.' },
+      { fi: '{Isot} koirat haukkuvat.', base: 'iso', en: 'The big dogs are barking.', tr: 'Büyük köpekler havlıyor.' },
+      { fi: 'Istun {mukavalla} tuolilla.', base: 'mukava', en: 'I\'m sitting on a comfortable chair.', tr: 'Rahat bir sandalyede oturuyorum.' },
+      { fi: 'Tulen {suuresta} kaupungista.', base: 'suuri', en: 'I come from a big city.', tr: 'Büyük bir şehirden geliyorum.' },
+      { fi: 'Tässä {kauniissa} puistossa on paljon lintuja.', base: 'kaunis', en: 'There are many birds in this beautiful park.', tr: 'Bu güzel parkta çok kuş var.' }
+    ]
+  },
+  {
+    id: 'postpositions', lv: 2, icon: 'map',
+    title: { en: 'Postpositions: kanssa, alla, päällä…', tr: 'Son çekim edatları: kanssa, alla, päällä…' },
+    summary: { en: '"With", "under", "next to" come after a genitive: talon edessä.', tr: 'Türkçedeki gibi sonra gelir: talon edessä = evin önünde.' },
+    body: {
+      en: [
+        'Finnish says "the house\'s front-in": **talon edessä** = in front of the house. These words come **after** the noun, and the noun goes into the **genitive** (-n).',
+        'Common ones: **kanssa** (with), **alla** (under), **päällä** (on top of), **vieressä** (next to), **edessä** (in front of), **takana** (behind), **välissä** (between), **luona** (at someone\'s place), **lähellä** (near).',
+        'Many have three forms, like the location cases: **alla – alle – alta** (under / to under / from under), **edessä – eteen – edestä**, **luona – luo – luota**. *Kissa menee pöydän alle* (The cat goes under the table).',
+        'With pronouns, use the genitive pronoun, usually with a possessive suffix: **minun kanssani** (with me), **sinun luonasi** (at your place). *välissä* needs two things: *talon ja kaupan välissä*.'
+      ],
+      tr: [
+        'Türkçe konuşanlar için çok kolay! Fince de "evin önünde" der: **talon edessä**. Bu kelimeler ismin **arkasından** gelir ve isim **genitif** (-n) hâlini alır; tıpkı Türkçedeki *evin önünde, masanın altında* gibi.',
+        'Sık kullanılanlar: **kanssa** (ile, birlikte), **alla** (altında), **päällä** (üstünde), **vieressä** (yanında), **edessä** (önünde), **takana** (arkasında), **välissä** (arasında), **luona** (birinin yanında / evinde), **lähellä** (yakınında).',
+        'Çoğunun yer hâlleri gibi üç biçimi vardır: **alla – alle – alta** (altında / altına / altından), **edessä – eteen – edestä**, **luona – luo – luota**. *Kissa menee pöydän alle* (Kedi masanın altına gidiyor).',
+        'Zamirlerle genitif zamir kullanılır, çoğunlukla iyelik ekiyle: **minun kanssani** (benimle), **sinun luonasi** (senin evinde). *välissä* iki şey ister: *talon ja kaupan välissä* (ev ile marketin arasında).'
+      ]
+    },
+    table: {
+      head: { en: ['Where?', 'Where to?', 'Where from?'], tr: ['Nerede?', 'Nereye?', 'Nereden?'] },
+      rows: [['alla', 'alle', 'alta'], ['päällä', 'päälle', 'päältä'], ['vieressä', 'viereen', 'vierestä'], ['edessä', 'eteen', 'edestä'], ['takana', 'taakse', 'takaa'], ['luona', 'luo', 'luota']]
+    },
+    examples: [
+      ['Kissa nukkuu sängyn alla.', 'The cat is sleeping under the bed.', 'Kedi yatağın altında uyuyor.'],
+      ['Menen elokuviin ystävän kanssa.', 'I\'m going to the cinema with a friend.', 'Bir arkadaşımla sinemaya gidiyorum.'],
+      ['Asun kirjaston vieressä.', 'I live next to the library.', 'Kütüphanenin yanında oturuyorum.'],
+      ['Olin eilen isoäidin luona.', 'I was at Grandma\'s yesterday.', 'Dün büyükannemdeydim.']
+    ],
+    quiz: [
+      { fi: 'Kirja on {pöydän} päällä.', base: 'pöytä', en: 'The book is on the table.', tr: 'Kitap masanın üstünde.' },
+      { fi: 'Lapset leikkivät {talon} takana.', base: 'talo', en: 'The children are playing behind the house.', tr: 'Çocuklar evin arkasında oynuyor.' },
+      { fi: 'Odotan sinua {aseman} edessä.', base: 'asema', en: 'I\'ll wait for you in front of the station.', tr: 'Seni istasyonun önünde bekliyorum.' },
+      { fi: 'Menen kauppaan {äidin} kanssa.', base: 'äiti', en: 'I\'m going to the shop with Mum.', tr: 'Annemle markete gidiyorum.' },
+      { fi: 'Pankki on {koulun} vieressä.', base: 'koulu', en: 'The bank is next to the school.', tr: 'Banka okulun yanında.' },
+      { fi: 'Kissa juoksi {sängyn} alle.', base: 'sänky', en: 'The cat ran under the bed.', tr: 'Kedi yatağın altına koştu.' },
+      { fi: 'Kauppa on pankin ja {kirjaston} välissä.', base: 'kirjasto', en: 'The shop is between the bank and the library.', tr: 'Market, banka ile kütüphanenin arasında.' },
+      { fi: 'Olen viikonlopun {Matin} luona.', base: 'Matti', en: 'I\'m spending the weekend at Matti\'s.', tr: 'Hafta sonunu Matti\'nin evinde geçiriyorum.' },
+      { fi: 'Tule {minun} kanssani!', base: 'minä', en: 'Come with me!', tr: 'Benimle gel!' },
+      { fi: 'Avaimet olivat {tyynyn} alla.', base: 'tyyny', en: 'The keys were under the pillow.', tr: 'Anahtarlar yastığın altındaydı.' }
+    ]
+  },
+  {
+    id: 'ordinals', lv: 2, icon: 'medal',
+    title: { en: 'Ordinal numbers and dates', tr: 'Sıra sayıları ve tarihler' },
+    summary: { en: 'ensimmäinen, toinen, kolmas… and kolmas toukokuuta.', tr: 'ensimmäinen, toinen, kolmas… ve kolmas toukokuuta.' },
+    body: {
+      en: [
+        'Ordinals answer "which one in order?". The first two are irregular: **ensimmäinen** (1st), **toinen** (2nd). From 3 on, add **-s** to a shortened stem: *kolmas, neljäs, viides, kuudes, seitsemäs, kahdeksas, yhdeksäs, kymmenes*.',
+        'Teens and tens: *yhdestoista* (11th), *kahdestoista* (12th), *kahdeskymmenes* (20th), *kahdeskymmenesensimmäinen* (21st). In writing, a **dot** after the number marks an ordinal: **3.** = *kolmas*.',
+        'Ordinals inflect like adjectives and agree with the noun. The stem of the -s ordinals is **-nne-** (partitive **-tta**): *kolmas* → *kolmannen*, *kolmatta*; *Asun **kolmannessa** kerroksessa* (on the third floor).',
+        'Dates: the day is an ordinal and the month is in the **partitive**: *kolmas toukokuuta* (3 May), written **3.5.** "On 3 May" uses the essive: **kolmantena toukokuuta**.'
+      ],
+      tr: [
+        'Sıra sayıları "kaçıncı?" sorusuna cevap verir. İlk ikisi düzensizdir: **ensimmäinen** (birinci), **toinen** (ikinci). 3\'ten sonra kısaltılmış gövdeye **-s** eklenir: *kolmas, neljäs, viides, kuudes, seitsemäs, kahdeksas, yhdeksäs, kymmenes*. Türkçedeki *-ıncı* eki gibi düşün.',
+        '11–19 arası ve onluklar: *yhdestoista* (11.), *kahdestoista* (12.), *kahdeskymmenes* (20.), *kahdeskymmenesensimmäinen* (21.). Yazıda sayıdan sonraki **nokta** sıra sayısını gösterir: **3.** = *kolmas*. Türkçede de *3.* "üçüncü" diye okunur!',
+        'Sıra sayıları sıfat gibi çekimlenir ve isme uyar. -s ile biten sıra sayılarının gövdesi **-nne-** olur (partitifte **-tta**): *kolmas* → *kolmannen*, *kolmatta*; *Asun **kolmannessa** kerroksessa* (Üçüncü katta oturuyorum).',
+        'Tarihler: gün sıra sayısıdır, ay ise **partitif** hâldedir: *kolmas toukokuuta* (3 Mayıs), yazılışı **3.5.** "3 Mayıs\'ta" demek için essif kullanılır: **kolmantena toukokuuta**.'
+      ]
+    },
+    table: {
+      head: { en: ['Number', 'Ordinal'], tr: ['Sayı', 'Sıra sayısı'] },
+      rows: [['1.', 'ensimmäinen'], ['2.', 'toinen'], ['3.', 'kolmas'], ['4.', 'neljäs'], ['5.', 'viides'], ['6.', 'kuudes'], ['10.', 'kymmenes'], ['20.', 'kahdeskymmenes']]
+    },
+    examples: [
+      ['Tämä on ensimmäinen kertani Suomessa.', 'This is my first time in Finland.', 'Bu, Finlandiya\'ya ilk gelişim.'],
+      ['Asumme toisessa kerroksessa.', 'We live on the second floor.', 'İkinci katta oturuyoruz.'],
+      ['Tänään on kymmenes kesäkuuta.', 'Today is the tenth of June.', 'Bugün 10 Haziran.'],
+      ['Synnyin viidentenä maaliskuuta.', 'I was born on the fifth of March.', '5 Mart\'ta doğdum.']
+    ],
+    quiz: [
+      { fi: 'Tammikuu on vuoden {ensimmäinen} kuukausi.', base: 'yksi', en: 'January is the first month of the year.', tr: 'Ocak, yılın ilk ayıdır.' },
+      { fi: 'Helmikuu on vuoden {toinen} kuukausi.', base: 'kaksi', en: 'February is the second month of the year.', tr: 'Şubat, yılın ikinci ayıdır.' },
+      { fi: 'Tänään on {kolmas} toukokuuta.', base: 'kolme', en: 'Today is the third of May.', tr: 'Bugün 3 Mayıs.' },
+      { fi: 'Hän tuli kilpailussa {kolmanneksi}.', base: 'kolme', en: 'She came third in the race.', tr: 'Yarışta üçüncü oldu.' },
+      { fi: 'Toimisto on {viidennessä} kerroksessa.', base: 'viisi', en: 'The office is on the fifth floor.', tr: 'Ofis beşinci katta.' },
+      { fi: 'Tänään on {kuudes} joulukuuta, itsenäisyyspäivä.', base: 'kuusi', en: 'Today is the sixth of December, Independence Day.', tr: 'Bugün 6 Aralık, Bağımsızlık Günü.' },
+      { fi: 'Huomenna on {kahdestoista} lokakuuta, syntymäpäiväni.', base: 'kaksitoista', en: 'Tomorrow is the twelfth of October, my birthday.', tr: 'Yarın 12 Ekim, doğum günüm.' },
+      { fi: 'Muutimme tänne {kahdeksantena} elokuuta.', base: 'kahdeksan', en: 'We moved here on the eighth of August.', tr: 'Buraya 8 Ağustos\'ta taşındık.' },
+      { fi: 'Tämä on {kymmenes} kerta, kun soitan sinulle!', base: 'kymmenen', en: 'This is the tenth time I\'ve called you!', tr: 'Seni onuncu kez arıyorum!' },
+      { fi: 'Poikani on {neljännellä} luokalla.', base: 'neljä', en: 'My son is in fourth grade.', tr: 'Oğlum dördüncü sınıfta.' }
+    ]
+  },
+  {
+    id: 'pronoun-cases', lv: 2, icon: 'contact',
+    title: { en: 'Pronouns in every case', tr: 'Zamirlerin çekimi' },
+    summary: { en: 'minä, minun, minua, minulla, minulle, minusta… and tämä, tuo, se.', tr: 'minä, minun, minua, minulla, minulle, minusta… ve tämä, tuo, se.' },
+    body: {
+      en: [
+        'Personal pronouns take the same endings as nouns, added to a stem: **minu-**, **sinu-**, **häne-**, **mei-**, **tei-**, **hei-**. So *minulla* (I have / on me), *minulle* (to me), *minusta* (about me / in my opinion), *minuun* (*luottaa minuun*, to trust me).',
+        'A few forms are special: partitive **minua, sinua, häntä, meitä, teitä, heitä**; genitive **minun, sinun, hänen, meidän, teidän, heidän**; and the object form in **-t**: **minut, sinut, hänet, meidät, teidät, heidät** (*Näin hänet* = I saw him).',
+        'The demonstratives **tämä** (this), **tuo** (that, over there) and **se** (it, that) have the stems **tä-**, **tuo-**, **si-**: *tässä, tuossa, siinä*; *tästä, tuosta, siitä*; partitive *tätä, tuota, sitä*. Plural **nämä, nuo, ne** → *näissä, noissa, niissä*.',
+        'In everyday speech **se** and **ne** are used for people too, but in standard Finnish use *hän* and *he* for people.'
+      ],
+      tr: [
+        'Şahıs zamirleri isimlerle aynı ekleri alır, ekler bir gövdeye gelir: **minu-**, **sinu-**, **häne-**, **mei-**, **tei-**, **hei-**. Yani *minulla* (bende), *minulle* (bana), *minusta* (benden / bence), *minuun* (*luottaa minuun*, bana güvenmek). Türkçedeki *ben → bende, bana, benden* çekimi gibi.',
+        'Birkaç biçim özeldir: partitif **minua, sinua, häntä, meitä, teitä, heitä**; genitif **minun, sinun, hänen, meidän, teidän, heidän** (benim, senin…); **-t** ile nesne biçimi: **minut, sinut, hänet, meidät, teidät, heidät** (*Näin hänet* = Onu gördüm).',
+        'İşaret zamirleri **tämä** (bu), **tuo** (şu, oradaki) ve **se** (o) şu gövdeleri alır: **tä-**, **tuo-**, **si-**: *tässä, tuossa, siinä* (bunda, şunda, onda); *tästä, tuosta, siitä*; partitif *tätä, tuota, sitä*. Çoğul **nämä, nuo, ne** → *näissä, noissa, niissä*. Türkçedeki bu / şu / o üçlüsüne çok benzer.',
+        'Günlük konuşmada **se** ve **ne** insanlar için de kullanılır, ama standart dilde insanlar için *hän* ve *he* kullan.'
+      ]
+    },
+    table: {
+      head: { en: ['I', 'you', 'he / she'], tr: ['ben', 'sen', 'o'] },
+      rows: [['minä', 'sinä', 'hän'], ['minun', 'sinun', 'hänen'], ['minua', 'sinua', 'häntä'], ['minut', 'sinut', 'hänet'], ['minulla', 'sinulla', 'hänellä'], ['minulle', 'sinulle', 'hänelle'], ['minusta', 'sinusta', 'hänestä'], ['minuun', 'sinuun', 'häneen']]
+    },
+    examples: [
+      ['Minulla on kylmä.', 'I\'m cold.', 'Üşüyorum.'],
+      ['Minusta tämä on hyvä idea.', 'I think this is a good idea.', 'Bence bu iyi bir fikir.'],
+      ['Soita minulle huomenna!', 'Call me tomorrow!', 'Yarın beni ara!'],
+      ['Mikä tuo on? – Se on kirjasto.', 'What\'s that? – It\'s a library.', 'Şu ne? – O bir kütüphane.']
+    ],
+    quiz: [
+      { fi: 'Annan kirjan {sinulle}.', base: 'sinä', en: 'I\'ll give the book to you.', tr: 'Kitabı sana veriyorum.' },
+      { fi: 'Rakastan {häntä}.', base: 'hän', en: 'I love her.', tr: 'Onu seviyorum.' },
+      { fi: '{Heillä} on iso talo.', base: 'he', en: 'They have a big house.', tr: 'Onların büyük bir evi var.' },
+      { fi: '{Minusta} tämä kirja on tylsä.', base: 'minä', en: 'I think this book is boring.', tr: 'Bence bu kitap sıkıcı.' },
+      { fi: 'Odotan {teitä} kahvilassa.', base: 'te', en: 'I\'ll wait for you in the café.', tr: 'Sizi kafede bekliyorum.' },
+      { fi: 'Vien {sinut} kotiin.', base: 'sinä', en: 'I\'ll take you home.', tr: 'Seni eve bırakayım.' },
+      { fi: 'Tämä kirja on {minun}.', base: 'minä', en: 'This book is mine.', tr: 'Bu kitap benim.' },
+      { fi: 'Asun {tässä} talossa.', base: 'tämä', en: 'I live in this house.', tr: 'Bu evde oturuyorum.' },
+      { fi: 'Pidätkö {tuosta} takista?', base: 'tuo', en: 'Do you like that coat?', tr: 'Şu ceketi beğendin mi?' },
+      { fi: 'En tiedä {siitä} mitään.', base: 'se', en: 'I don\'t know anything about it.', tr: 'Onun hakkında hiçbir şey bilmiyorum.' }
+    ]
+  },
+  {
+    id: 'verb-rection', lv: 3, icon: 'magnet',
+    title: { en: 'Verbs that choose a case', tr: 'Belirli hâl isteyen fiiller' },
+    summary: { en: 'pitää kahvista, auttaa ystävää, tottua kylmään.', tr: 'pitää kahvista, auttaa ystävää, tottua kylmään.' },
+    body: {
+      en: [
+        'Many verbs decide the case of the word that follows. Learn the verb **together with its case**, the way you learn English *listen to* or *depend on*. The Finnish case is often surprising: "to like" takes "out of": *Pidän **kahvista***.',
+        '**Elative (-sta/-stä)**: *pitää* (like), *tykätä* (like, informal), *kiinnostua* (get interested in), *nauttia* (enjoy), *puhua* (talk about), *unelmoida* (dream of). *Tykkään **sinusta***.',
+        '**Partitive**: *auttaa* (help), *odottaa* (wait for), *ajatella* (think about), *rakastaa* (love), *kuunnella* (listen to), *katsoa* (look at). *Odotan **bussia***, *Ajattelen **sinua***.',
+        '**Illative (-Vn, -hVn, -seen)**: *tottua* (get used to), *luottaa* (trust), *rakastua* (fall in love with), *tutustua* (get to know), *osallistua* (take part in). *Olen tottunut **kylmään***, *Luotan **sinuun***.'
+      ],
+      tr: [
+        'Birçok fiil, arkasından gelen kelimenin hâlini belirler. Fiili **hâliyle birlikte** öğren; tıpkı Türkçede *-den korkmak*, *-e güvenmek* gibi. Ama hâller her zaman Türkçeyle örtüşmez: Türkçede yardım "-e" edilir, Fincede *auttaa* partitif ister: *Autan **äitiä*** (Anneme yardım ediyorum).',
+        '**Elatif (-sta/-stä)**: *pitää* (sevmek, hoşlanmak – Türkçedeki *-den hoşlanmak* gibi!), *tykätä* (sevmek, gündelik), *kiinnostua* (-e ilgi duymak), *nauttia* (-den keyif almak), *puhua* (-den bahsetmek), *unelmoida* (-i hayal etmek). *Tykkään **sinusta*** (Senden hoşlanıyorum).',
+        '**Partitif**: *auttaa* (-e yardım etmek), *odottaa* (-i beklemek), *ajatella* (-i düşünmek), *rakastaa* (-i sevmek), *kuunnella* (-i dinlemek), *katsoa* (-e bakmak). *Odotan **bussia*** (Otobüsü bekliyorum), *Ajattelen **sinua*** (Seni düşünüyorum).',
+        '**İllatif (-Vn, -hVn, -seen)**: *tottua* (-e alışmak), *luottaa* (-e güvenmek), *rakastua* (-e âşık olmak), *tutustua* (-i tanımak, ile tanışmak), *osallistua* (-e katılmak). *Olen tottunut **kylmään*** (Soğuğa alıştım), *Luotan **sinuun*** (Sana güveniyorum).'
+      ]
+    },
+    table: {
+      head: { en: ['Verb + case', 'Example'], tr: ['Fiil + hâl', 'Örnek'] },
+      rows: [['pitää + -sta', 'Pidän musiikista.'], ['tykätä + -sta', 'Tykkään sinusta.'], ['kiinnostua + -sta', 'Kiinnostuin historiasta.'], ['auttaa + partitiivi', 'Autan ystävää.'], ['odottaa + partitiivi', 'Odotan junaa.'], ['ajatella + partitiivi', 'Ajattelen sinua.'], ['tottua + -Vn', 'Olen tottunut kylmään.'], ['luottaa + -Vn', 'Luotan sinuun.']]
+    },
+    examples: [
+      ['Tykkäätkö jäätelöstä?', 'Do you like ice cream?', 'Dondurma sever misin?'],
+      ['Voitko auttaa minua?', 'Can you help me?', 'Bana yardım edebilir misin?'],
+      ['Olen jo tottunut pimeään.', 'I\'ve already got used to the dark.', 'Karanlığa çoktan alıştım.'],
+      ['Hän kiinnostui suomen kielestä.', 'She became interested in the Finnish language.', 'Fince ile ilgilenmeye başladı.']
+    ],
+    quiz: [
+      { fi: 'Pidän {suklaasta}.', base: 'suklaa', en: 'I like chocolate.', tr: 'Çikolatayı severim.' },
+      { fi: 'Tykkäätkö {jalkapallosta}?', base: 'jalkapallo', en: 'Do you like football?', tr: 'Futbolu sever misin?' },
+      { fi: 'Autan {naapuria} usein.', base: 'naapuri', en: 'I often help the neighbour.', tr: 'Komşuya sık sık yardım ederim.' },
+      { fi: 'Odotan {junaa} asemalla.', base: 'juna', en: 'I\'m waiting for the train at the station.', tr: 'İstasyonda treni bekliyorum.' },
+      { fi: 'Ajattelen {kesää} koko ajan.', base: 'kesä', en: 'I think about summer all the time.', tr: 'Sürekli yazı düşünüyorum.' },
+      { fi: 'Hän kiinnostui {taiteesta}.', base: 'taide', en: 'He became interested in art.', tr: 'Sanata ilgi duymaya başladı.' },
+      { fi: 'En ole vielä tottunut {talveen}.', base: 'talvi', en: 'I haven\'t got used to the winter yet.', tr: 'Kışa henüz alışmadım.' },
+      { fi: 'Luotan {sinuun}.', base: 'sinä', en: 'I trust you.', tr: 'Sana güveniyorum.' },
+      { fi: 'Lapset odottavat {joulua}.', base: 'joulu', en: 'The children are waiting for Christmas.', tr: 'Çocuklar Noel\'i bekliyor.' },
+      { fi: 'Tutustuin {Liisaan} kurssilla.', base: 'Liisa', en: 'I got to know Liisa on the course.', tr: 'Liisa ile kursta tanıştım.' }
+    ]
+  },
+  {
+    id: 'colloquial-finnish', lv: 3, icon: 'speech',
+    title: { en: 'Spoken Finnish (puhekieli)', tr: 'Konuşma dili (puhekieli)' },
+    summary: { en: 'mä, sä, oon, mennään! Recognize it, write the standard form.', tr: 'mä, sä, oon, mennään! Tanı, ama standart biçimi yaz.' },
+    body: {
+      en: [
+        'Finns write standard Finnish (*yleiskieli*) but speak a relaxed **puhekieli**. You will hear it everywhere, so learn to **recognize** it. When you write, use the standard forms.',
+        'Pronouns shrink: **minä → mä**, **sinä → sä**, and *hän / he* are usually **se / ne**. Possessive suffixes drop and the genitive shortens: *minun kirjani* → **mun kirja**, *sinun autosi* → **sun auto**.',
+        'Verbs get shorter: *olen → **oon***, *olet → **oot***, *tulen → **tuun***, *menen → **meen***. "We" uses the passive form: *me menemme → **me mennään***, and **Mennään!** means "Let\'s go!". The *-vat* of "they" disappears: *he puhuvat → **ne puhuu***.',
+        'Questions add **-ks**: *Onko sinulla aikaa?* → **Onks sulla aikaa?**, *Tuletko?* → **Tuleks sä?**. Other common forms: *tämä → **tää***, *ei ole → **ei oo***, *minulla → **mulla***, *sinulle → **sulle***, and *joo* = yes.'
+      ],
+      tr: [
+        'Finliler yazarken standart Fince (*yleiskieli*) kullanır, ama konuşurken rahat bir **puhekieli** konuşur. Her yerde duyacaksın, o yüzden onu **tanımayı** öğren. Yazarken standart biçimleri kullan.',
+        'Zamirler kısalır: **minä → mä**, **sinä → sä**; *hän / he* yerine de genellikle **se / ne** denir. İyelik ekleri düşer, genitif kısalır: *minun kirjani* → **mun kirja**, *sinun autosi* → **sun auto**. Türkçedeki *geliyorum → geliyom* gibi kısalmaları düşün.',
+        'Fiiller kısalır: *olen → **oon***, *olet → **oot***, *tulen → **tuun***, *menen → **meen***. "Biz" için edilgen biçim kullanılır: *me menemme → **me mennään***; **Mennään!** "Hadi gidelim!" demektir. "Onlar"ın *-vat* eki düşer: *he puhuvat → **ne puhuu***.',
+        'Sorular **-ks** alır: *Onko sinulla aikaa?* → **Onks sulla aikaa?**, *Tuletko?* → **Tuleks sä?**. Diğer sık biçimler: *tämä → **tää***, *ei ole → **ei oo***, *minulla → **mulla***, *sinulle → **sulle***; *joo* = evet.'
+      ]
+    },
+    table: {
+      head: { en: ['Spoken', 'Standard'], tr: ['Konuşma dili', 'Standart'] },
+      rows: [['mä', 'minä'], ['sä', 'sinä'], ['mun kirja', 'minun kirjani'], ['mulla', 'minulla'], ['oon', 'olen'], ['oot', 'olet'], ['me mennään', 'me menemme'], ['onks', 'onko'], ['tää', 'tämä']]
+    },
+    examples: [
+      ['Mä oon kotona.', 'I\'m at home. (Standard: Minä olen kotona.)', 'Evdeyim. (Standart: Minä olen kotona.)'],
+      ['Onks sulla nälkä?', 'Are you hungry? (Standard: Onko sinulla nälkä?)', 'Acıktın mı? (Standart: Onko sinulla nälkä?)'],
+      ['Mennään kahville!', 'Let\'s go for a coffee!', 'Hadi kahve içmeye gidelim!'],
+      ['Mun auto on tuolla.', 'My car is over there. (Standard: Minun autoni on tuolla.)', 'Arabam şurada. (Standart: Minun autoni on tuolla.)']
+    ],
+    quiz: [
+      { fi: 'Mä oon väsynyt. → Minä {olen} väsynyt.', base: 'olla', en: 'I\'m tired.', tr: 'Yorgunum.' },
+      { fi: 'Sä oot myöhässä. → Sinä {olet} myöhässä.', base: 'olla', en: 'You\'re late.', tr: 'Geç kaldın.' },
+      { fi: 'Mä tuun huomenna. → Minä {tulen} huomenna.', base: 'tulla', en: 'I\'ll come tomorrow.', tr: 'Yarın gelirim.' },
+      { fi: 'Onks sulla aikaa? → {Onko} sinulla aikaa?', base: 'olla', en: 'Do you have time?', tr: 'Vaktin var mı?' },
+      { fi: 'Mulla on nälkä. → {Minulla} on nälkä.', base: 'minä', en: 'I\'m hungry.', tr: 'Acıktım.' },
+      { fi: 'Me mennään kauppaan. → Me {menemme} kauppaan.', base: 'mennä', en: 'We\'re going to the shop.', tr: 'Markete gidiyoruz.' },
+      { fi: 'Ne puhuu ruotsia. → He {puhuvat} ruotsia.', base: 'puhua', en: 'They speak Swedish.', tr: 'İsveççe konuşuyorlar.' },
+      { fi: 'Mun kirja on tässä. → Minun {kirjani} on tässä.', base: 'kirja', en: 'My book is here.', tr: 'Kitabım burada.' },
+      { fi: 'Soita mulle! → Soita {minulle}!', base: 'minä', en: 'Call me!', tr: 'Beni ara!' },
+      { fi: 'Tuleks sä mukaan? → {Tuletko} sinä mukaan?', base: 'tulla', en: 'Are you coming along?', tr: 'Sen de geliyor musun?' }
     ]
   }
 ];

@@ -13,6 +13,11 @@ A free, offline-friendly game for learning Finnish — in English and Turkish.
 
 ---
 
+> [!WARNING]
+> **Made with AI.** The code and all learning content (words, sentences, dialogues, readings, grammar lessons) were produced with the help of AI and reviewed automatically, but **not yet fully checked by a native Finnish speaker**. Expect occasional mistakes — please [report them](https://github.com/nurettincoban/piirra/issues/new).
+>
+> **Yapay zekâ ile hazırlandı.** Kod ve tüm öğrenme içeriği yapay zekâ yardımıyla üretildi; henüz anadili Fince olan biri tarafından tamamen kontrol edilmedi ve hata içerebilir. Lütfen [hata bildir](https://github.com/nurettincoban/piirra/issues/new).
+
 ## What is it?
 
 A picture is drawn on screen one stroke at a time. Guess the Finnish word before the drawing is finished. Around that core game there is a whole little Finnish course, from beginner to intermediate:
@@ -20,12 +25,13 @@ A picture is drawn on screen one stroke at a time. Guess the Finnish word before
 | | |
 |---|---|
 | ✏️ **Draw & guess** | 409 illustrated words in 21 topics. Type, pick from four, listen and type, or translate. |
-| 🧩 **Sentence lab** | 348 gap-fill sentences tagged by grammar point. |
-| 🏋️ **Verb gym** | 78 verbs with full present, past and negative tables. |
-| 🎓 **Pocket grammar** | 43 short lessons (EN + TR) with tables, examples and 250 quiz items, plus a mixed *grammar workout*. |
-| 💬 **Conversations** | 27 real-life dialogues: café, pharmacy, train station, job interview… |
-| 📖 **Phrasebook** | 243 everyday phrases and idioms with flashcards. |
-| 🖼️ **Little scenes** | 40 two-picture scenes that practise cases and forms. |
+| 🧩 **Sentence lab** | 626 gap-fill sentences tagged by grammar point. |
+| 🏋️ **Verb gym** | 126 verbs with full present, past and negative tables. |
+| 🎓 **Pocket grammar** | 51 short lessons (EN + TR) with tables, examples and 500 quiz items, plus a mixed *grammar workout*. |
+| 📚 **Reading** | 36 graded texts with audio, glossary, translation and questions. |
+| 💬 **Conversations** | 48 real-life dialogues: café, pharmacy, train station, job interview… |
+| 📖 **Phrasebook** | 423 everyday phrases and idioms with flashcards. |
+| 🖼️ **Little scenes** | 70 two-picture scenes that practise cases and forms. |
 | 🔢 **Numbers** | Generated practice from 0 to 9999. |
 
 ### Levels
@@ -40,6 +46,8 @@ A picture is drawn on screen one stroke at a time. Guess the Finnish word before
 
 - Short rounds; the drawing never times out.
 - Hints are free — they only make the word come back sooner.
+- Forgiving answers: one wrong, missing or swapped letter still counts (with the spelling highlighted), *a*/*o* for *ä*/*ö* is accepted, and near misses get an "almost!" with letter-by-letter hints instead of a flat "wrong".
+- Letter boxes show how long the answer is while you type.
 - Spaced repetition: known words come back less often, missed words sooner.
 - **No accounts, no ads, no tracking.** Progress lives in your browser; export/import a backup file to move it.
 - Works offline after the first visit (installable PWA).

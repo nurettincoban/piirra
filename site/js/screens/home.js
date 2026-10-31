@@ -1,8 +1,8 @@
 import { t, L, levelName } from '../i18n.js';
 import { settings, setSetting, progress } from '../store.js';
-import { shell, icon, onLeave, $, $$, bar, toast, reducedMotion } from '../ui.js';
+import { shell, icon, esc, onLeave, $, $$, bar, toast, reducedMotion, REPO_URL } from '../ui.js';
 import { artSvg, playDrawing, showComplete } from '../art.js';
-import { WORDS, SENTENCES, DIALOGUES, VERBS, GRAMMAR, PHRASES, SCENES, levelStats, dueWords } from '../content.js';
+import { WORDS, SENTENCES, DIALOGUES, VERBS, GRAMMAR, PHRASES, SCENES, READINGS, levelStats, dueWords } from '../content.js';
 import { sfx } from '../sound.js';
 
 const SHOWCASE = ['kissa', 'aurinko', 'omena', 'polkupyörä', 'kahvi', 'kukka', 'vene', 'lintu', 'sateenvarjo', 'jäätelö', 'talo', 'kuu'];
@@ -18,6 +18,7 @@ export function modeCards(extraClass = '') {
     { href: '#/verbs', icon: 'dumbbell', title: 'm_verbs', desc: 'm_verbs_d', meta: t('items', { n: VERBS.length }), tint: 'sage' },
     { href: '#/scenes', icon: 'images', title: 'm_scenes', desc: 'm_scenes_d', meta: t('items', { n: SCENES.length }), tint: 'sky' },
     { href: '#/talk', icon: 'messages-square', title: 'm_talk', desc: 'm_talk_d', meta: t('items', { n: DIALOGUES.length }), tint: 'sun' },
+    { href: '#/read', icon: 'book-open-text', title: 'm_read', desc: 'm_read_d', meta: t('items', { n: READINGS.length }), tint: 'sage' },
     { href: '#/phrases', icon: 'book-a', title: 'm_phrases', desc: 'm_phrases_d', meta: t('items', { n: PHRASES.length }), tint: 'plum' },
     { href: '#/numbers', icon: 'binary', title: 'm_numbers', desc: 'm_numbers_d', meta: '0 – 9999', tint: 'peach' },
     { href: '#/grammar', icon: 'graduation-cap', title: 'm_grammar', desc: 'm_grammar_d', meta: t('lessons_n', { n: GRAMMAR.length }), tint: 'sage' },
@@ -65,7 +66,10 @@ export default function home() {
         <h1>${t('hero_title')}</h1>
         <p class="lead">${t('hero_lead')}</p>
         <div class="hero-actions">
-          <a class="btn btn-primary btn-lg" href="#/play?mode=type">${icon('pencil-line')} ${t('cta_play')}</a>
+          ${settings.last?.hash && settings.last.hash !== '#/play?mode=type'
+            ? `<a class="btn btn-primary btn-lg" href="${esc(settings.last.hash)}">${icon('play')} ${t('continue_last', { name: t(settings.last.key) })}</a>
+               <a class="btn btn-lg" href="#/play?mode=type">${icon('pencil-line')} ${t('cta_play')}</a>`
+            : `<a class="btn btn-primary btn-lg" href="#/play?mode=type">${icon('pencil-line')} ${t('cta_play')}</a>`}
           ${due ? `<a class="btn btn-lg" href="#/play?mode=type&review=1">${icon('history')} ${t('m_review')} · ${due}</a>` : `<a class="btn btn-lg btn-ghost" href="#/learn">${t('cta_learn')} ${icon('arrow-right')}</a>`}
         </div>
         <div class="hero-meta">
@@ -82,6 +86,12 @@ export default function home() {
         <div class="float-note" id="hero-note">${t('new_word')}<b class="fi">${first.fi}</b>${L(first)}</div>
       </div>
     </section>
+
+    <div class="ai-banner" role="note">
+      ${icon('sparkles')}
+      <div><b>${t('ai_title')}</b><span>${t('ai_short')}</span></div>
+      <a class="btn btn-sm" href="${REPO_URL}/issues/new" target="_blank" rel="noopener">${icon('flag')} ${t('report')}</a>
+    </div>
 
     <section>
       <h2 class="section-title">${t('choose_level')}</h2>

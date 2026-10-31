@@ -2,11 +2,12 @@
 
 import { t, L, levelName } from '../i18n.js';
 import { settings, progress, markDone, count } from '../store.js';
-import { shell, icon, esc, onLeave, $, check, fiKeys, bindFiKeys, slots, bindSlots, endScreen, rich } from '../ui.js';
+import { shell, icon, esc, onLeave, $, checkDetail, diffHtml, fiKeys, bindFiKeys, slots, bindSlots, endScreen, rich } from '../ui.js';
 import { DIALOGUES } from '../content.js';
 import { sfx, speak } from '../sound.js';
 
 const npcLine = (s) => (settings.lang === 'tr' ? s.npcTr : s.npcEn);
+const modelWords = (s) => String(s.model || '').split(/\s+/).filter(Boolean);
 
 export default function talk({ sub }) {
   if (sub) {
@@ -63,7 +64,7 @@ function conversation(d) {
         ${past}
         <div class="bubble npc"><span class="fi" lang="fi">${esc(step.npc)}<button class="speak" data-say aria-label="${t('listen_again')}">${icon('volume-2')}</button></span><small>${esc(npcLine(step))}</small></div>
         ${done ? `<div class="bubble me ${st.result === 'miss' ? 'missed' : ''}"><span class="fi" lang="fi">${esc(st.result === 'miss' ? step.model : st.typed)}</span>
-            <small>${st.result === 'miss' ? t('model_answer') : st.result === 'near' ? t('correct_typo') + ' · ' + esc(step.model) : t('correct')}</small></div>` : ''}
+            <small>${st.result === 'miss' ? t('model_answer') : st.result === 'near' ? t('correct_typo') + ' · ' + diffHtml(st.typed, st.target || step.model) : t('correct')}</small></div>` : ''}
       </div>
       ${done ? `
         ${st.result !== 'miss' && step.model && st.result !== 'near' ? `<p class="muted" style="text-align:right;margin:-6px 0 12px">${t('model_answer')}: <span class="fi" lang="fi">${esc(step.model)}</span></p>` : ''}
@@ -75,27 +76,49 @@ function conversation(d) {
           <button class="btn btn-primary">${icon('send-horizontal')} <span class="sr">${t('reply')}</span></button>
         </form>
         <div style="margin-top:12px">${slots('t-slots')}</div>
-        <div class="row between" style="margin-top:10px">${fiKeys('tin')}<button class="btn btn-ghost btn-sm" data-reveal>${icon('eye')} ${t('reveal')}</button></div>
+        <div class="row between" style="margin-top:10px">${fiKeys('tin')}<div class="tools">
+          <button class="btn btn-soft btn-sm" data-hint ${st.words >= modelWords(step).length ? 'disabled' : ''}>${icon('lightbulb')} ${t('hint_word')}</button>
+          <button class="btn btn-ghost btn-sm" data-reveal>${icon('eye')} ${t('reveal')}</button></div></div>
         <div class="feedback" id="fb" role="status" style="margin-top:8px"></div>`}
     </div>`, { route: 'talk', game: true });
     bindFiKeys();
     // Several replies are accepted; the slots follow the model answer, so the count is approximate.
-    if (!done) bindSlots($('#tin'), step.model, $('#t-slots'), { approx: true });
+    // Hint letters: every letter of the model words revealed so far.
+    const hinted = () => modelWords(step).slice(0, st.words || 0).join('').replace(/[^\p{L}\p{N}]/gu, '').length;
+    const updateSlots = done ? null : bindSlots($('#tin'), step.model, $('#t-slots'), { approx: true, revealed: hinted });
+    $('[data-hint]')?.addEventListener('click', () => {
+      st.words = (st.words || 0) + 1;
+      sfx.hint();
+      const v = $('#tin').value;
+      render();
+      $('#tin').value = v;
+      $('#tin').dispatchEvent(new Event('input'));
+      $('#tin').focus();
+    });
     $('[data-say]')?.addEventListener('click', () => speak(step.npc));
     $('#tf')?.addEventListener('submit', (e) => {
       e.preventDefault();
       const v = $('#tin').value;
-      const res = check(v, [...step.answers, step.model]);
-      if (res === 'empty') return;
-      if (res === 'wrong') {
+      const res = checkDetail(v, [...step.answers, step.model]);
+      if (res.kind === 'empty') return;
+      if (res.kind === 'close') {
+        // Suggest the reply they were most likely aiming for.
+        sfx.near();
+        $('#fb').className = 'feedback close';
+        $('#fb').innerHTML = `${icon('sparkle')} ${t('close_reply')} ${diffHtml(v, res.target)}`;
+        return;
+      }
+      if (res.kind === 'wrong') {
         sfx.wrong();
         const i = $('#tin'); i.classList.remove('shake'); void i.offsetWidth; i.classList.add('shake');
         st.tries = (st.tries || 0) + 1;
-        $('#fb').textContent = st.tries > 1 ? t('not_quite_n') : t('not_quite');
+        $('#fb').className = 'feedback';
+        $('#fb').textContent = st.tries > 1 ? t('not_quite_talk') : t('not_quite');
         return;
       }
       st.typed = v.trim();
-      finish(res === 'exact' ? 'good' : 'near');
+      st.target = res.target;
+      finish(res.kind === 'exact' ? 'good' : 'near');
     });
     $('[data-reveal]')?.addEventListener('click', () => finish('miss'));
     $('[data-next]')?.addEventListener('click', () => {

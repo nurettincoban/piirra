@@ -2,7 +2,7 @@
 
 import { t } from '../i18n.js';
 import { settings, count, logAnswer } from '../store.js';
-import { shell, icon, esc, onLeave, $, $$, check, fiKeys, bindFiKeys, slots, bindSlots, endScreen, toast } from '../ui.js';
+import { shell, icon, esc, onLeave, $, $$, checkDetail, missFeedback, diffHtml, fiKeys, bindFiKeys, slots, bindSlots, endScreen, toast } from '../ui.js';
 import { numberWord, NUMBER_TABLE } from '../finnish.js';
 import { sfx, speak, canSpeak } from '../sound.js';
 
@@ -72,6 +72,7 @@ function drill() {
         ${done ? `<div class="reveal ${st.result ? 'success' : 'miss'}" style="text-align:left">
             <div class="panel-label">${st.result ? icon('sparkles') + ' ' + t('correct') : icon('bookmark') + ' ' + t('remember')}</div>
             <div class="word" style="font-size:clamp(22px,3vw,30px);flex-wrap:wrap"><span>${n}</span><span class="fi" lang="fi" style="word-break:break-word">${esc(numberWord(n, { spaced: n >= 1000 }))}</span><button class="speak" data-say aria-label="${t('listen_again')}">${icon('volume-2')}</button></div>
+            ${st.typo ? `<div class="typo-note">${t('you_wrote')}: <s>${esc(st.typo.typed)}</s> → ${diffHtml(st.typo.typed.replace(/\s+/g, ''), st.typo.target)}</div>` : ''}
             <div class="row" style="justify-content:flex-end"><button class="btn btn-primary" data-next>${run.i === queue.length - 1 ? t('finish') : t('next')} ${icon('arrow-right')} <span class="kbd">↵</span></button></div>
           </div>` : `<form class="answer" id="nf" autocomplete="off">
             <input id="nin" ${kind === 'num_to_word' ? `placeholder="${t('type_here')}" lang="fi"` : 'inputmode="numeric" placeholder="123"'} aria-label="${t('type_here')}" autocapitalize="off" spellcheck="false">
@@ -84,7 +85,7 @@ function drill() {
     </div>`, { route: 'numbers', game: true });
     bindFiKeys();
     // Writing a number word: slots for its letters. Writing digits: one slot per digit.
-    bindSlots($('#nin'), kind === 'num_to_word' ? word : String(n), $('#n-slots'));
+    const updateSlots = bindSlots($('#nin'), kind === 'num_to_word' ? word : String(n), $('#n-slots'));
     const say = () => { const o = $('#orb'); o?.classList.add('playing'); speak(word, { onend: () => o?.classList.remove('playing') }); };
     $('#orb')?.addEventListener('click', say);
     $('[data-say]')?.addEventListener('click', () => speak(word));
@@ -92,15 +93,15 @@ function drill() {
       e.preventDefault();
       const v = $('#nin').value.trim();
       if (!v) return;
-      let ok;
-      if (kind === 'num_to_word') {
-        const res = check(v.replace(/\s+/g, ''), [word]);
-        ok = res === 'exact' || res === 'umlaut' || res === 'near';
-      } else ok = Number(v.replace(/\D/g, '')) === n && /\d/.test(v);
-      if (ok) return finish(true);
-      sfx.wrong();
-      const i = $('#nin'); i.classList.remove('shake'); void i.offsetWidth; i.classList.add('shake');
-      $('#fb').textContent = t('not_quite');
+      let res;
+      if (kind === 'num_to_word') res = checkDetail(v.replace(/\s+/g, ''), [word]);
+      else res = { kind: Number(v.replace(/\D/g, '')) === n && /\d/.test(v) ? 'exact' : 'wrong', target: String(n) };
+      if (res.kind === 'exact' || res.kind === 'umlaut' || res.kind === 'near') {
+        if (res.kind !== 'exact') st.typo = { kind: res.kind, typed: v, target: word };
+        return finish(true);
+      }
+      const close = missFeedback($('#fb'), res, v, updateSlots);
+      if (close) sfx.near(); else { sfx.wrong(); const i = $('#nin'); i.classList.remove('shake'); void i.offsetWidth; i.classList.add('shake'); }
     });
     $('[data-reveal]')?.addEventListener('click', () => finish(false));
     $('[data-next]')?.addEventListener('click', () => { run.i++; run.i >= queue.length ? end() : start(); });
@@ -116,7 +117,7 @@ function drill() {
     if (settings.autoSpeak && kind !== 'num_listen') setTimeout(() => speak(numberWord(queue[run.i])), 250);
     render();
   }
-  function start() { st = { result: null }; render(); }
+  function start() { st = { result: null, typo: null }; render(); }
   function end() {
     sfx.done(); count('numberRuns');
     endScreen({ route: 'numbers', title: t('end_numbers'), iconName: 'binary', back: '#/numbers',

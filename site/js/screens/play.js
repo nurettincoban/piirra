@@ -1,8 +1,8 @@
 // The drawing game. Modes: type (guess while it draws), choice (4 options), listen (hear & type), reverse (see translation).
 
 import { t, L, TOPICS } from '../i18n.js';
-import { settings, review, setLearned, item, count } from '../store.js';
-import { shell, icon, esc, onLeave, $, $$, check, shuffle, fiKeys, bindFiKeys, slots, bindSlots, endScreen, reducedMotion } from '../ui.js';
+import { settings, setSetting, review, setLearned, item, count } from '../store.js';
+import { shell, icon, esc, onLeave, $, $$, checkDetail, missFeedback, diffHtml, shuffle, fiKeys, bindFiKeys, slots, bindSlots, endScreen, reducedMotion } from '../ui.js';
 import { artSvg, prepareDrawing, showComplete } from '../art.js';
 import { WORDS, activeLevels, inLevels, pickItems, distractors, dueWords } from '../content.js';
 import { sfx, speak, canSpeak, finnishVoices } from '../sound.js';
@@ -115,6 +115,8 @@ function renderRound() {
           <div class="panel-label">${icon(run.mode === 'listen' ? 'ear' : run.mode === 'choice' ? 'list-checks' : 'pencil-line')} ${t('m_' + (run.mode === 'type' ? 'draw' : run.mode))}</div>
           <h1 class="prompt-title">${title()}</h1>
         </div>
+        ${!settings.seenPlayTip && run.mode !== 'choice' ? `<div class="tip" id="first-tip" style="margin:0">${icon('info')}<span><b>${t('tip_title')}</b><br>${t('tip_play')}
+          <br><button class="btn btn-sm" data-tip-ok style="margin-top:8px">${t('got_it')}</button></span></div>` : ''}
         ${input}
         <div class="hint-line" id="hint-line" aria-live="polite"></div>
         <div class="feedback" id="feedback" role="status"></div>
@@ -135,6 +137,7 @@ function renderRound() {
   $$('[data-choice]').forEach((b) => b.addEventListener('click', () => onChoice(b)));
   $$('[data-act]').forEach((b) => b.addEventListener('click', () => act(b.dataset.act, b)));
   $('#orb')?.addEventListener('click', () => say());
+  $('[data-tip-ok]')?.addEventListener('click', () => { setSetting('seenPlayTip', true); $('#first-tip')?.remove(); $('#guess')?.focus(); });
 
   if (run.mode === 'type' || run.mode === 'choice') {
     drawFn = prepareDrawing($('#paper'));
@@ -210,21 +213,17 @@ function onGuess(e) {
   e.preventDefault();
   if (round.revealed) return;
   const input = $('#guess');
-  const res = check(input.value, answersOf(round.word));
-  if (res === 'empty') return;
-  round.attempts++;
-  if (res === 'exact') return reveal(true);
-  if (res === 'near' || res === 'umlaut') {
-    // One small slip is accepted, but it counts as "helped".
-    round.helped = true;
-    return reveal(true, true);
+  const res = checkDetail(input.value, answersOf(round.word));
+  if (res.kind === 'empty') return;
+  if (res.kind === 'exact') return reveal(true);
+  if (res.kind === 'near' || res.kind === 'umlaut') {
+    // A small slip still shows you knew the word: accepted, with the spelling highlighted.
+    return reveal(true, { kind: res.kind, typed: input.value.trim(), target: res.target });
   }
-  sfx.wrong();
-  input.classList.remove('shake');
-  void input.offsetWidth;
-  input.classList.add('shake');
-  $('#feedback').className = 'feedback';
-  $('#feedback').textContent = round.attempts > 2 ? t('not_quite_n') : t('not_quite');
+  round.attempts++;
+  const close = missFeedback($('#feedback'), res, input.value, round.updateSlots);
+  if (close) sfx.near(); else sfx.wrong();
+  if (!close) { input.classList.remove('shake'); void input.offsetWidth; input.classList.add('shake'); }
   input.select();
 }
 
@@ -240,7 +239,7 @@ function onChoice(btn) {
   $$('[data-choice]').forEach((b) => (b.disabled = true));
 }
 
-function reveal(correct, typo = false) {
+function reveal(correct, typo = null) {
   if (round.revealed) return;
   round.revealed = true;
   cancelAnimationFrame(raf);
@@ -282,6 +281,7 @@ function reveal(correct, typo = false) {
     <div class="panel-label">${correct ? icon('sparkles') + ' ' + (typo ? t('correct_typo') : t('correct')) : icon('bookmark') + ' ' + t('remember')}</div>
     <div class="word"><span class="fi" lang="fi">${esc(w.fi)}</span><button class="speak" data-say aria-label="${t('listen_again')}">${icon('volume-2')}</button></div>
     <div class="trans">${esc(L(w))}</div>
+    ${typo ? `<div class="typo-note">${t('you_wrote')}: <s>${esc(typo.typed)}</s> → ${diffHtml(typo.typed, typo.target)}<span class="muted" style="flex-basis:100%;font-size:13px">${t(typo.kind === 'umlaut' ? 'umlaut_ok' : 'typo_ok')}</span></div>` : ''}
     ${w.ex ? `<div class="example"><span class="fi" lang="fi">${esc(w.ex[0])}</span><small>${esc(settings.lang === 'tr' ? w.ex[2] : w.ex[1])}</small></div>` : ''}
     <div class="row between">
       <button class="btn btn-ghost btn-sm" data-learn aria-pressed="${learned}">${icon(learned ? 'rotate-ccw' : 'check-check')} ${learned ? t('unmark_learned') : t('mark_learned')}</button>
