@@ -2,7 +2,7 @@
 
 import { t } from '../i18n.js';
 import { settings, count, logAnswer } from '../store.js';
-import { shell, icon, esc, onLeave, $, $$, check, fiKeys, bindFiKeys, endScreen, toast } from '../ui.js';
+import { shell, icon, esc, onLeave, $, $$, check, fiKeys, bindFiKeys, slots, bindSlots, endScreen, toast } from '../ui.js';
 import { numberWord, NUMBER_TABLE } from '../finnish.js';
 import { sfx, speak, canSpeak } from '../sound.js';
 
@@ -76,12 +76,15 @@ function drill() {
           </div>` : `<form class="answer" id="nf" autocomplete="off">
             <input id="nin" ${kind === 'num_to_word' ? `placeholder="${t('type_here')}" lang="fi"` : 'inputmode="numeric" placeholder="123"'} aria-label="${t('type_here')}" autocapitalize="off" spellcheck="false">
             <button class="btn btn-primary">${t('check')}</button></form>
+            <div style="margin-top:12px;text-align:left">${slots('n-slots')}</div>
             ${kind === 'num_to_word' ? `<div class="row" style="margin-top:10px">${fiKeys('nin')}</div>` : ''}
             <div class="row" style="justify-content:center;margin-top:12px"><button class="btn btn-ghost btn-sm" data-reveal>${icon('eye')} ${t('reveal')}</button></div>
             <div class="feedback" id="fb" role="status"></div>`}
       </div>
     </div>`, { route: 'numbers', game: true });
     bindFiKeys();
+    // Writing a number word: slots for its letters. Writing digits: one slot per digit.
+    bindSlots($('#nin'), kind === 'num_to_word' ? word : String(n), $('#n-slots'));
     const say = () => { const o = $('#orb'); o?.classList.add('playing'); speak(word, { onend: () => o?.classList.remove('playing') }); };
     $('#orb')?.addEventListener('click', say);
     $('[data-say]')?.addEventListener('click', () => speak(word));

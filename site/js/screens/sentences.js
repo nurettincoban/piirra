@@ -2,7 +2,7 @@
 
 import { t, L, levelName } from '../i18n.js';
 import { settings, review, count } from '../store.js';
-import { shell, icon, esc, onLeave, $, $$, check, fiKeys, bindFiKeys, endScreen, normalize } from '../ui.js';
+import { shell, icon, esc, onLeave, $, $$, check, fiKeys, bindFiKeys, slots, bindSlots, endScreen, normalize } from '../ui.js';
 import { SENTENCES, GRAMMAR_BY_ID, activeLevels, inLevels, pickItems } from '../content.js';
 import { sfx, speak } from '../sound.js';
 
@@ -23,8 +23,7 @@ export function gapRunner({ items, route, back, titleHtml, eyebrow, keyOf, endTi
     const answer = answerOf(x);
     const [before, after] = x.fi.split(/\{[^}]+\}/);
     const done = state.result !== null;
-    const mask = Array.from(answer).map((c, i) => (i < state.letters ? c : '_')).join('');
-    const gapText = done ? esc(answer) : state.letters ? esc(mask) : '&nbsp;';
+    const gapText = done ? esc(answer) : '&nbsp;';
     const g = GRAMMAR_BY_ID.get(x.g);
     const showBase = x.base && normalize(x.base) !== normalize(answer);
     const tr = settings.lang === 'tr' ? x.tr : x.en;
@@ -49,6 +48,7 @@ export function gapRunner({ items, route, back, titleHtml, eyebrow, keyOf, endTi
           <input id="gap" placeholder="${t('type_here')}" aria-label="${t('type_here')}" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" lang="fi">
           <button class="btn btn-primary" type="submit">${t('check')}</button>
         </form>
+        <div style="margin-top:12px">${slots('gap-slots')}</div>
         <div class="row between" style="margin-top:10px">${fiKeys('gap')}
           <div class="tools">
             ${showBase ? `<button class="btn btn-soft btn-sm" data-base ${state.base ? 'disabled' : ''}>${icon('book-a')} ${state.base ? `<span class="fi" lang="fi">${esc(x.base)}</span>` : t('hint_base')}</button>` : ''}
@@ -61,6 +61,7 @@ export function gapRunner({ items, route, back, titleHtml, eyebrow, keyOf, endTi
     </div>`, { route, game: true });
 
     bindFiKeys();
+    bindSlots($('#gap'), answer, $('#gap-slots'), { revealed: () => state.letters });
     $('[data-tr]')?.addEventListener('click', () => { state.tr = true; keepInput(render); });
     $('[data-base]')?.addEventListener('click', () => { state.base = true; state.helped = true; sfx.hint(); keepInput(render); });
     $('[data-letter]')?.addEventListener('click', () => { state.letters = Math.min(Array.from(answer).length - 1, state.letters + 1); state.helped = true; sfx.hint(); keepInput(render); });
@@ -85,7 +86,7 @@ export function gapRunner({ items, route, back, titleHtml, eyebrow, keyOf, endTi
     onAfterRender?.(x, state);
   }
 
-  function keepInput(fn) { const v = $('#gap')?.value || ''; fn(); const i = $('#gap'); if (i) { i.value = v; i.focus(); } }
+  function keepInput(fn) { const v = $('#gap')?.value || ''; fn(); const i = $('#gap'); if (i) { i.value = v; i.focus(); i.dispatchEvent(new Event('input')); } }
 
   function resultHtml(x, answer, g) {
     const good = state.result !== 'miss';

@@ -1,5 +1,5 @@
 // Offline support: precache the app, then serve from cache and refresh in the background.
-const VERSION = 'piirra-v2.0.1';
+const VERSION = 'piirra-v2.1.0';
 const SHELL = [
   './', './index.html', './manifest.webmanifest', './css/style.css', './assets/icon.svg',
   './js/main.js', './js/i18n.js', './js/store.js', './js/ui.js', './js/art.js', './js/sound.js', './js/content.js', './js/finnish.js',

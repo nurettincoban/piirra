@@ -2,7 +2,7 @@
 
 import { t, L, TOPICS } from '../i18n.js';
 import { settings, review, setLearned, item, count } from '../store.js';
-import { shell, icon, esc, onLeave, $, $$, check, shuffle, fiKeys, bindFiKeys, toast, endScreen, reducedMotion } from '../ui.js';
+import { shell, icon, esc, onLeave, $, $$, check, shuffle, fiKeys, bindFiKeys, slots, bindSlots, endScreen, reducedMotion } from '../ui.js';
 import { artSvg, prepareDrawing, showComplete } from '../art.js';
 import { WORDS, activeLevels, inLevels, pickItems, distractors, dueWords } from '../content.js';
 import { sfx, speak, canSpeak, finnishVoices } from '../sound.js';
@@ -95,6 +95,7 @@ function renderRound() {
         <input id="guess" name="guess" placeholder="${t('type_here')}" aria-label="${t('type_here')}" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" lang="fi">
         <button class="btn btn-primary" type="submit">${t('guess')}</button>
       </form>
+      ${slots('slots')}
       ${fiKeys('guess')}`;
 
   shell(`<div class="wrap">
@@ -128,6 +129,7 @@ function renderRound() {
   </div>`, { route: '', game: true });
 
   bindFiKeys();
+  round.updateSlots = bindSlots($('#guess'), w.fi, $('#slots'), { revealed: () => round.letters });
   $('#guess-form')?.addEventListener('submit', onGuess);
   $('#guess')?.addEventListener('input', () => { $('#feedback').textContent = ''; $('#guess').classList.remove('shake'); });
   $$('[data-choice]').forEach((b) => b.addEventListener('click', () => onChoice(b)));
@@ -197,10 +199,9 @@ function hint(kind) {
 function renderHints() {
   const line = $('#hint-line');
   if (!line) return;
-  const chars = Array.from(round.word.fi);
-  let mask = '';
-  if (round.letters) mask = chars.map((c, i) => (c === ' ' || c === '-' ? c : i < round.letters ? c.toLocaleUpperCase('fi') : '_')).join('');
-  line.innerHTML = `${esc(mask)}${round.meaning ? `<span class="meaning">${icon('languages')} ${esc(L(round.word))}</span>` : ''}`;
+  // Revealed letters appear inside the letter slots; this line only carries the meaning hint.
+  round.updateSlots?.();
+  line.innerHTML = round.meaning ? `<span class="meaning">${icon('languages')} ${esc(L(round.word))}</span>` : '';
 }
 
 function answersOf(w) { return [w.fi, ...(w.alt || [])]; }

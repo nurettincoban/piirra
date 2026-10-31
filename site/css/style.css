@@ -343,6 +343,16 @@ section + section { margin-top: 48px; }
 .fi-keys { display: flex; gap: 6px; }
 .fi-keys button { width: 42px; height: 38px; border-radius: 10px; border: 1px solid var(--line); background: var(--paper); font: 600 17px/1 var(--display); color: var(--ink-2); }
 .fi-keys button:hover { color: var(--ink); border-color: var(--line-2); }
+.slots { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 14px; min-height: 34px; }
+.slot-word { display: inline-flex; flex-wrap: wrap; gap: 5px; align-items: flex-end; max-width: 100%; }
+.slot { width: 26px; height: 34px; border-radius: 8px; border: 1.5px solid var(--line-2); background: var(--paper); display: grid; place-items: center; font: 600 17px/1 var(--display); text-transform: lowercase; color: var(--ink); transition: border-color .15s, background .15s, transform .15s; }
+.slot.on { border-color: var(--brand); background: color-mix(in srgb, var(--brand) 10%, var(--paper)); transform: translateY(-1px); }
+.slot.hint { color: var(--ink-3); border-style: dashed; }
+.slot-mark { font: 600 17px/34px var(--display); color: var(--ink-3); font-style: normal; margin: 0 -3px; }
+.slot-count { margin-left: auto; align-self: center; font-size: 12px; font-weight: 700; color: var(--ink-3); letter-spacing: .04em; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.slots.over .slot-count { color: var(--bad); }
+.slots.over .slot.on { border-color: var(--bad); }
+@media (max-width: 600px) { .slot { width: 22px; height: 30px; font-size: 15px; } .slot-word { gap: 4px; } }
 .hint-line { min-height: 28px; font: 600 24px/1.2 var(--display); letter-spacing: .32em; color: var(--ink-2); }
 .hint-line .meaning { display: block; letter-spacing: 0; font: 500 15px/1.4 var(--font); color: var(--ink-3); margin-top: 6px; }
 .feedback { min-height: 22px; font-size: 14px; font-weight: 600; color: var(--bad); }

@@ -2,7 +2,7 @@
 
 import { t, L } from '../i18n.js';
 import { settings, review, count } from '../store.js';
-import { shell, icon, esc, onLeave, $, $$, check, fiKeys, bindFiKeys, endScreen, shuffle } from '../ui.js';
+import { shell, icon, esc, onLeave, $, $$, check, fiKeys, bindFiKeys, slots, bindSlots, endScreen, shuffle } from '../ui.js';
 import { VERBS, activeLevels, inLevels } from '../content.js';
 import { sfx, speak } from '../sound.js';
 
@@ -105,7 +105,7 @@ function drill(queue) {
             <div class="row between" style="margin-top:10px">${fiKeys('vin')}<div class="tools">
               <button class="btn btn-soft btn-sm" data-letter>${icon('lightbulb')} ${t('hint_letter')}</button>
               <button class="btn btn-ghost btn-sm" data-reveal>${icon('eye')} ${t('reveal')}</button></div></div>
-            <div class="hint-line" id="hl" style="margin-top:10px">${st.letters ? esc(Array.from(answer).map((c, i) => (i < st.letters || c === ' ' ? c : '_')).join('')) : ''}</div>
+            <div style="margin-top:12px">${slots('v-slots')}</div>
             <div class="feedback" id="fb" role="status"></div>`}
         </div>
         <div>${done ? `<div class="reveal ${st.result === 'miss' ? 'miss' : 'success'}">
@@ -117,6 +117,7 @@ function drill(queue) {
       </div>
     </div>`, { route: 'verbs', game: true });
     bindFiKeys();
+    const updateSlots = bindSlots($('#vin'), answer, $('#v-slots'), { revealed: () => st.letters });
     $('#vf')?.addEventListener('submit', (e) => {
       e.preventDefault();
       const input = $('#vin');
@@ -129,7 +130,7 @@ function drill(queue) {
       $('#fb').textContent = t('not_quite');
       input.select();
     });
-    $('[data-letter]')?.addEventListener('click', () => { const v0 = $('#vin').value; st.letters = Math.min(Array.from(answer).length - 1, st.letters + 1); sfx.hint(); render(); $('#vin').value = v0; });
+    $('[data-letter]')?.addEventListener('click', () => { st.letters = Math.min(Array.from(answer).filter((c) => c !== ' ').length - 1, st.letters + 1); sfx.hint(); updateSlots(); $('#vin').focus(); });
     $('[data-reveal]')?.addEventListener('click', () => finish('miss'));
     $('[data-say]')?.addEventListener('click', () => speak(`${PRONOUNS[p]} ${answer}`));
     $('[data-next]')?.addEventListener('click', () => { run.index++; run.index >= run.queue.length ? end() : start(); });

@@ -137,6 +137,35 @@ export function bindFiKeys(root = document) {
   });
 }
 
+// ---------- Letter slots: show how many letters the answer has and fill them while typing ----------
+const isLetter = (c) => /[\p{L}\p{N}]/u.test(c);
+export function slots(id) { return `<div class="slots" id="${id}" aria-live="off"></div>`; }
+export function bindSlots(input, answer, box, { revealed = () => 0, approx = false } = {}) {
+  if (!input || !box || !answer) return () => {};
+  const chars = Array.from(answer);
+  const total = chars.filter(isLetter).length;
+  const update = () => {
+    const typed = Array.from(input.value).filter(isLetter);
+    const shown = revealed();
+    let k = 0;
+    const cells = chars.map((c) => {
+      if (!isLetter(c)) return c === ' ' ? '<i class="slot-space"></i>' : `<i class="slot-mark">${esc(c)}</i>`;
+      const tc = typed[k];
+      const hint = k < shown ? c : '';
+      k++;
+      return `<span class="slot ${tc ? 'on' : hint ? 'hint' : ''}">${esc(tc || hint)}</span>`;
+    });
+    // Group each word so long answers wrap between words, not inside them.
+    const words = cells.join('').split('<i class="slot-space"></i>').map((w) => `<span class="slot-word">${w}</span>`).join('');
+    box.classList.toggle('over', typed.length > total);
+    box.innerHTML = `${words}<span class="slot-count">${approx ? '≈ ' : ''}${typed.length}/${total} ${t('letters')}</span>`;
+    box.setAttribute('aria-label', `${total} ${t('letters')}`);
+  };
+  input.addEventListener('input', update);
+  update();
+  return update;
+}
+
 // "**x**" → <b>x</b> (endings), "*x*" → <i>x</i> (Finnish examples), everything else escaped.
 export function rich(s) {
   return esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\*([^*\s][^*]*?)\*/g, '<i lang="fi">$1</i>');

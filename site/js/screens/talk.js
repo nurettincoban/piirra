@@ -2,7 +2,7 @@
 
 import { t, L, levelName } from '../i18n.js';
 import { settings, progress, markDone, count } from '../store.js';
-import { shell, icon, esc, onLeave, $, check, fiKeys, bindFiKeys, endScreen, rich } from '../ui.js';
+import { shell, icon, esc, onLeave, $, check, fiKeys, bindFiKeys, slots, bindSlots, endScreen, rich } from '../ui.js';
 import { DIALOGUES } from '../content.js';
 import { sfx, speak } from '../sound.js';
 
@@ -74,10 +74,13 @@ function conversation(d) {
           <input id="tin" placeholder="${t('your_reply')}" aria-label="${t('your_reply')}" autocapitalize="off" spellcheck="false" lang="fi">
           <button class="btn btn-primary">${icon('send-horizontal')} <span class="sr">${t('reply')}</span></button>
         </form>
+        <div style="margin-top:12px">${slots('t-slots')}</div>
         <div class="row between" style="margin-top:10px">${fiKeys('tin')}<button class="btn btn-ghost btn-sm" data-reveal>${icon('eye')} ${t('reveal')}</button></div>
         <div class="feedback" id="fb" role="status" style="margin-top:8px"></div>`}
     </div>`, { route: 'talk', game: true });
     bindFiKeys();
+    // Several replies are accepted; the slots follow the model answer, so the count is approximate.
+    if (!done) bindSlots($('#tin'), step.model, $('#t-slots'), { approx: true });
     $('[data-say]')?.addEventListener('click', () => speak(step.npc));
     $('#tf')?.addEventListener('submit', (e) => {
       e.preventDefault();

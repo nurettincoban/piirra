@@ -78,7 +78,7 @@ const S = {
     mark_learned: 'I know this well', unmark_learned: 'Back to practice',
     hint_cost: 'Hints are free — they just mean the word comes back sooner.',
     keys_hint: 'Enter to check · Esc to leave',
-    noun: 'noun',
+    noun: 'noun', letters: 'letters',
 
     end_title: 'Look what you <em>found</em>.',
     end_words: 'Words in this run',
@@ -268,7 +268,7 @@ const S = {
     mark_learned: 'Bunu iyi biliyorum', unmark_learned: 'Pratiğe geri al',
     hint_cost: 'İpuçları ücretsiz — sadece kelime daha erken geri gelir.',
     keys_hint: 'Kontrol için Enter · Çıkmak için Esc',
-    noun: 'isim',
+    noun: 'isim', letters: 'harf',
 
     end_title: 'Bak neler <em>buldun</em>.',
     end_words: 'Bu turdaki kelimeler',
