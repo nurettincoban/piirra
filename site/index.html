@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f5f2ea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121a17" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Piirrä — a free, offline-friendly game for learning Finnish. Watch a picture being drawn and guess the word. Sentences, verbs, conversations and grammar, from beginner to intermediate.">
+  <meta property="og:title" content="Piirrä — learn Finnish by guessing drawings">
+  <meta property="og:description" content="Watch it draw. Find the word. A free Finnish learning game in English and Turkish.">
+  <meta property="og:image" content="./assets/og.png">
+  <title>Piirrä — learn Finnish, one drawing at a time</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="./css/style.css">
+  <script>
+    // Apply the saved theme before first paint to avoid a flash.
+    try {
+      var s = JSON.parse(localStorage.getItem('piirra:settings') || '{}');
+      if (s.theme === 'light' || s.theme === 'dark') document.documentElement.dataset.theme = s.theme;
+      if (s.lang) document.documentElement.lang = s.lang;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="app" aria-live="polite"></div>
+  <noscript><p style="padding:2rem;font-family:sans-serif">Piirrä needs JavaScript to run.</p></noscript>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

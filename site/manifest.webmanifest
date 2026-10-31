@@ -1,0 +1,16 @@
+{
+  "name": "Piirrä — learn Finnish by drawing",
+  "short_name": "Piirrä",
+  "description": "Watch it draw, find the word. A free Finnish learning game.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f2ea",
+  "theme_color": "#244e40",
+  "categories": ["education", "games"],
+  "icons": [
+    { "src": "./assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "./assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "./assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
